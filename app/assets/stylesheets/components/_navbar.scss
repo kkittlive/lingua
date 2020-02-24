@@ -4,6 +4,8 @@
   position: fixed;
   top: 0;
   width: 100%;
+  background-color: transparent;
+  transition: 0.5s background-color ease;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -12,6 +14,7 @@
 
 .navbar-light .navbar-nav .nav-link {
   color: white;
+  transition: 0.5s color ease;
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -24,6 +27,17 @@
   font-weight: bold;
   font-height: 50px;
   color: white;
-  font-animation: none;
   margin-left: 30px;
+}
+
+.navbar-lewagon-white {
+  background-color: white;
+}
+
+.nav-item-black {
+  color: black !important;
+}
+
+.logo-black {
+  color: black !important;
 }

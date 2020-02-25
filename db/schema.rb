@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_25_184407) do
+ActiveRecord::Schema.define(version: 2020_02_25_201451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "language_skills", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "language_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_language_skills_on_language_id"
+    t.index ["user_id"], name: "index_language_skills_on_user_id"
+  end
+
+  create_table "languages", force: :cascade do |t|
+    t.string "name"
+    t.string "flag"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "lessons", force: :cascade do |t|
     t.datetime "date"
@@ -67,7 +83,6 @@ ActiveRecord::Schema.define(version: 2020_02_25_184407) do
     t.string "phone_number"
     t.integer "age"
     t.string "gender"
-    t.string "language"
     t.string "location"
     t.string "availability"
     t.text "biography"
@@ -76,6 +91,8 @@ ActiveRecord::Schema.define(version: 2020_02_25_184407) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "language_skills", "languages"
+  add_foreign_key "language_skills", "users"
   add_foreign_key "reviews", "lessons"
   add_foreign_key "user_qualifications", "qualifications"
   add_foreign_key "user_qualifications", "users"

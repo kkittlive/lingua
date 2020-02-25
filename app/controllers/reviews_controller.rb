@@ -2,9 +2,9 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     if @review.save
-      flash.now[:notice] = 'Your review is ready!'
+      flash[:notice] = 'Your review is ready!'
     else
-      flash.now[:alert] = 'There was a problem with your review.'
+      flash[:alert] = 'There was a problem with your review.'
     end
     redirect_to user_path
   end

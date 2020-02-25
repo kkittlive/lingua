@@ -1,13 +1,17 @@
 class LessonsController < ApplicationController
   def create
+    teacher = User.find(params[:lesson][:teacher_id])
+    student = User.find(params[:lesson][:student_id])
     @lesson = Lesson.new(lesson_params)
+    @lesson.teacher = teacher
+    @lesson.student = student
     authorize @lesson
     if @lesson.save
-      flash.now[:notice] = 'Lesson booked!'
+      flash[:alert] = 'Lesson booked!'
     else
-      flash.now[:alert] = 'There was a problem with your lesson.'
+      flash[:alert] = 'There was a problem with your lesson.'
     end
-    redirect_to user_path
+    redirect_to user_path(teacher.id)
   end
 
   def edit
@@ -22,6 +26,6 @@ class LessonsController < ApplicationController
   private
 
   def lesson_params
-    params.require(:lesson).permit(:date, :location, :student, :teacher)
+    params.require(:lesson).permit(:date, :location, :student_id, :teacher_id)
   end
 end

@@ -140,6 +140,7 @@ user_seed = [
   },
 ]
 
+User.destroy_all
 User.create!(user_seed)
 
 qualification_seed = [
@@ -166,4 +167,33 @@ qualification_seed = [
   {title: 'TESOL certified'}
 ]
 
+Qualification.destroy_all
 Qualification.create!(qualification_seed)
+
+language_seed = [
+  { name: 'Mandarin', flag: 'temp' },
+  { name: 'English', flag: 'temp' },
+  { name: 'Spanish', flag: 'temp' },
+  { name: 'Arabic', flag: 'temp' },
+  { name: 'Bengali', flag: 'temp' },
+  { name: 'Hindi', flag: 'temp' },
+  { name: 'Russian', flag: 'temp' },
+  { name: 'Portuguese', flag: 'temp' },
+  { name: 'Japanese', flag: 'temp' },
+  { name: 'German', flag: 'temp' },
+  { name: 'Japanese', flag: 'temp' },
+  { name: 'Korean', flag: 'temp' },
+  { name: 'French', flag: 'temp' },
+  { name: 'Turkish', flag: 'temp' },
+  { name: 'Vietnamese', flag: 'temp' },
+  { name: 'Telugu', flag: 'temp' },
+  { name: 'Italian', flag: 'temp' },
+  { name: 'Polish', flag: 'temp' },
+  { name: 'Ukrainian', flag: 'temp' },
+  { name: 'Persian', flag: 'temp' },
+  { name: 'Thai', flag: 'temp' },
+  { name: 'Dutch', flag: 'temp' }
+]
+
+Language.destroy_all
+Language.create!(language_seed)

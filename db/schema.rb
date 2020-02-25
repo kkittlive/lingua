@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_02_25_184407) do
     t.bigint "student_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "status"
+    t.string "status", default: "pending"
   end
 
   create_table "qualifications", force: :cascade do |t|

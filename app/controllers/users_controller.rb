@@ -10,10 +10,22 @@ class UsersController < ApplicationController
     authorize @teacher
     @lesson = Lesson.new
     @user = current_user ? current_user : User.new
+    @rating = rating_calculator(@teacher)
   end
 
   def dashboard
     @user = current_user
     authorize @user
+  end
+
+  private
+
+  def rating_calculator(teacher)
+    sum = 0
+    teacher.reviews.each do |review|
+      sum += review.rating
+    end
+    return 0 if teacher.reviews.length.zero?
+    sum / teacher.reviews.length
   end
 end

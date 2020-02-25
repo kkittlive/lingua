@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root to: 'users#index'
+  resources :users, only: [:show]
+  resources :lessons, only: [:create, :edit, :update]
+  get '/users/dashboard', to: 'users#dashboard'
+  post '/reviews', to: 'reviews#create'
 end

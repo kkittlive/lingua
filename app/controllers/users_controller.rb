@@ -5,15 +5,15 @@ class UsersController < ApplicationController
     @teachers = policy_scope(User)
   end
 
+  def dashboard
+    @user = current_user
+    authorize @user
+  end
+
   def show
     @teacher = User.find(params[:id])
     authorize @teacher
     @lesson = Lesson.new
     @user = current_user
-  end
-
-  def dashboard
-    @user = current_user
-    authorize @user
   end
 end

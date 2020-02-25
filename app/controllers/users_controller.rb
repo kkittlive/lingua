@@ -4,16 +4,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @teacher = find_user
+    @teacher = User.find(params[:id])
   end
 
   def dashboard
-    @user = find_user
-  end
-
-  private
-
-  def find_user
-    User.find(params[:id])
+    @user = current_user
   end
 end

@@ -1,0 +1,54 @@
+.profile-info {
+  flex-basis: 30%;
+  border: 1px solid #4A4A4A;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-info-list li {
+  list-style-type: none;
+  text-align: left;
+  line-height: 30px;
+}
+
+.profile {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.profile .icon {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.profile-classes {
+  flex-grow: 1;
+  margin-left: 50px;
+}
+
+.profile-classes table {
+  width: 100%;
+  margin-right: 30px;
+  margin-top: 30px;
+}
+
+.profile-classes table th, td {
+  border-bottom: 1px solid #ddd;
+  padding-left: 5px;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #4A4A4A;
+}
+
+a {
+  color: black;
+}
+
+.profile-classes thead th {
+  padding-bottom: 15px;
+}
+

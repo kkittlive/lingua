@@ -1,0 +1,141 @@
+
+<div class="container">
+  <h2 class="text-center">My account</h2>
+
+<div class="profile">
+  <div class="profile-info">
+    <div class="icon-container">
+      <img class="icon" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80">
+    </div>
+    <div class="profile-info-list">
+      <ul>
+        <li>First name: <%= @user.first_name %></li>
+        <li>Last name: <%= @user.last_name %></li>
+        <li>E-mail: <%= @user.last_name %></li>
+        <li>Phone: <%= @user.phone_number %></li>
+        <li>Gender: <%= @user.gender %></li>
+        <li>Address: <%= @user.location %></li>
+      </ul>
+    </div>
+    <div class="text-center">
+      <%= link_to "Edit profile", "/", class: "btn btn-ghost" %>
+    </div>
+  </div>
+
+  <div class="profile-classes">
+    <ul class="nav nav-pills nav-fill mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="pills-comfirmed-tab" data-toggle="pill" href="#pills-confirmed" role="tab" aria-controls="pills-confirmed" aria-selected="true">Confirmed classes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-pending-tab" data-toggle="pill" href="#pills-pending" role="tab" aria-controls="pills-pending" aria-selected="false">Pending classes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-completed-tab" data-toggle="pill" href="#pills-completed" role="tab" aria-controls="pills-completed" aria-selected="false">Completed classes</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-confirmed" role="tabpanel" aria-labelledby="pills-confirmed-tab">
+        <table>
+          <thead>
+            <tr>
+              <th>Language</th>
+              <th>Teacher</th>
+              <th>Date</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Spanish</td>
+              <td>Maria Gonzales</td>
+              <td>03. February 2020 - 7-8pm</td>
+              <td><%= link_to "Contact teacher", "/", class: "btn btn-ghost" %></td>
+            </tr>
+            <tr>
+              <td>Spanish</td>
+              <td>Rodrigo Pela</td>
+              <td>04. February 2020 - 1-2pm</td>
+              <td><%= link_to "Contact teacher", "/", class: "btn btn-ghost" %></td>
+            </tr>
+            <tr>
+              <td>English</td>
+              <td>Thomas Walter</td>
+              <td>11. February - 3-4 pm</td>
+              <td><%= link_to "Contact teacher", "/", class: "btn btn-ghost" %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-pane fade" id="pills-pending" role="tabpanel" aria-labelledby="pills-pending-tab">
+        <table>
+        <thead>
+            <tr>
+              <th>Language</th>
+              <th>Teacher</th>
+              <th>Date</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Spanish</td>
+              <td>Maria Gonzales</td>
+              <td>03. February 2020 - 7-8pm</td>
+              <td><%= link_to "Contact teacher", "/", class: "btn btn-ghost" %></td>
+            </tr>
+            <tr>
+              <td>Spanish</td>
+              <td>Rodrigo Pela</td>
+              <td>04. February 2020 - 1-2pm</td>
+              <td><%= link_to "Contact teacher", "/", class: "btn btn-ghost" %></td>
+            </tr>
+            <tr>
+              <td>English</td>
+              <td>Thomas Walter</td>
+              <td>11. February - 3-4 pm</td>
+              <td><%= link_to "Contact teacher", "/", class: "btn btn-ghost" %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-pane fade" id="pills-completed" role="tabpanel" aria-labelledby="pills-completed-tab">
+        <table>
+        <thead>
+            <tr>
+              <th>Language</th>
+              <th>Teacher</th>
+              <th>Date</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Spanish</td>
+              <td>Maria Gonzales</td>
+              <td>03. February 2020 - 7-8pm</td>
+              <td><%= link_to "Add a review", "/", class: "btn btn-ghost" %></td>
+            </tr>
+            <tr>
+              <td>Spanish</td>
+              <td>Rodrigo Pela</td>
+              <td>04. February 2020 - 1-2pm</td>
+              <td><%= link_to "Add a review", "/", class: "btn btn-ghost" %></td>
+            </tr>
+            <tr>
+              <td>English</td>
+              <td>Thomas Walter</td>
+              <td>11. February - 3-4 pm</td>
+              <td><%= link_to "Add a review", "/", class: "btn btn-ghost" %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="profile-resources">
+  </div>
+
+</div>

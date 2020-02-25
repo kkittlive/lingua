@@ -207,14 +207,3 @@ all_users.each do |user|
     LanguageSkill.create!(user_id: user.id, language_id: all_languages.sample.id)
   end
 end
-
-# i = 0
-# all_users.each do |user|
-#   loop do
-#     i += 1
-#     LanguageSkill.create!(user_id: user.id, language_id: all_languages.sample.id)
-#     if i >= rand(1..3)
-#       break
-#     end
-#   end
-# end

@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @teacher = User.find(params[:id])
     authorize @teacher
     @lesson = Lesson.new
-    @user = current_user
+    @user = current_user ? current_user : User.new
   end
 
   def dashboard

@@ -68,3 +68,68 @@ p {
 .btn-ghost:hover {
   opacity: 1;
 }
+
+
+.teacher-card {
+  margin: 30px;
+  opacity: .9;
+}
+
+.teacher-background {
+  padding: 20px;
+  display: flex;
+  position: relative;
+}
+
+.teacher-avatar {
+width: 231px;
+height: 210px;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+object-fit: cover;
+}
+
+.teacher-info {
+  margin: 10px;
+  margin-left: 20px;
+}
+
+.teacher-flag {
+  position: absolute;
+right: 1%;
+top: 6%;
+ width: 161px;
+  height: 91px;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 5px;
+}
+
+.teacher-bio {
+  padding: 30px;
+}
+
+.teacher-bio h3 {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.teacher-actions {
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.teacher-actions h3 {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.teacher-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.show-page {
+  background-image: url(https://images.unsplash.com/photo-1550340499-a6c60fc8287c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80);
+  height: 100vh;
+}

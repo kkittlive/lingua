@@ -69,6 +69,25 @@ p {
   opacity: 1;
 }
 
+.btn-black {
+  color: white;
+  border: 1px solid black;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  background-color: black
+}
+
+.btn-black:hover {
+  opacity: 1;
+  color: white;
+}
+
+
 
 .teacher-card {
   margin: 30px;
@@ -123,13 +142,7 @@ border-radius: 5px;
   text-decoration: underline;
 }
 
-.teacher-buttons {
-  display: flex;
-  justify-content: space-between;
-  padding: 30px;
-}
-
 .show-page {
   background-image: url(https://images.unsplash.com/photo-1550340499-a6c60fc8287c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80);
-  height: 100vh;
+  height: 150vh;
 }

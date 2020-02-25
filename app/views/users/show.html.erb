@@ -33,13 +33,10 @@
             <%= f.input :teacher_id, as: :hidden, input_html: { value: @teacher.id } %>
             <%= f.input :date %>
             <%= f.input :location %>
-            <%= f.button :submit, class: "btn btn-ghost" %>
+            <%= f.button :submit, class: "btn btn-black" %>
+            <br>
+            <%= link_to "Back to List", "/", class: "btn btn-ghost" %>
           <% end %>
-      </div>
-    </div>
-    <div class="teacher-buttons">
-      <div class="text-center">
-        <%= link_to "Back to List", "/", class: "btn btn-ghost" %>
       </div>
     </div>
   </div>

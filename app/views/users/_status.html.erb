@@ -1,0 +1,26 @@
+<div class="tab-pane fade show <%= state == 'confirmed' ? 'active' : '' %>" id="pills-<%= state %>" role="tabpanel" aria-labelledby="pills-<%= state %>-tab">
+  <table>
+    <thead>
+      <tr>
+        <th>Language</th>
+        <th>Teacher</th>
+        <th>Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% lessons.each do |lesson| %>
+        <tr>
+          <td><%= lesson.teacher.language %></td>
+          <td><%= lesson.teacher.first_name %> <%= lesson.teacher.last_name %></td>
+          <td><%= lesson.date %></td>
+          <% if lesson.status == "completed" %>
+            <td><%= link_to "Add review", users_dashboard_path, class: "btn btn-ghost" %></td>
+          <% else %>
+            <td><%= link_to "Contact teacher", root_path, class: "btn btn-ghost" %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

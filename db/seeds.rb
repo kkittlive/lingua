@@ -141,3 +141,29 @@ user_seed = [
 ]
 
 User.create!(user_seed)
+
+qualification_seed = [
+  {title: 'fluent speaker'},
+  {title: 'native speaker'},
+  {title: 'comedian'},
+  {title: 'musician'},
+  {title: 'teachers college'},
+  {title: 'ESL certified'},
+  {title: 'polyglot'},
+  {title: 'digital nomad'},
+  {title: 'traveller'},
+  {title: 'beer'},
+  {title: 'coffee'},
+  {title: 'tea'},
+  {title: 'theatre'},
+  {title: 'certified tutor'},
+  {title: 'school teacher'},
+  {title: 'university professor'},
+  {title: 'bicycling'},
+  {title: 'paddling'},
+  {title: 'foodie'},
+  {title: 'TEFL certified'},
+  {title: 'TESOL certified'}
+]
+
+Qualification.create!(qualification_seed)

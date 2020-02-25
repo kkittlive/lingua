@@ -130,6 +130,9 @@ user_seed = [
   },
 ]
 
+UserQualification.destroy_all
+LanguageSkill.destroy_all
+
 User.destroy_all
 User.create!(user_seed)
 
@@ -160,6 +163,20 @@ qualification_seed = [
 Qualification.destroy_all
 Qualification.create!(qualification_seed)
 
+all_users = User.all
+all_qualifications = Qualification.all
+
+i = 0
+all_users.each do |user|
+  loop do
+    i += 1
+    UserQualification.create!(user_id: user.id, qualification_id: all_qualifications.sample.id)
+    if i >= rand(3..6)
+      break
+    end
+  end
+end
+
 language_seed = [
   { name: 'Mandarin', flag: 'temp' },
   { name: 'English', flag: 'temp' },
@@ -187,3 +204,16 @@ language_seed = [
 
 Language.destroy_all
 Language.create!(language_seed)
+
+all_languages = Language.all
+
+i = 0
+all_users.each do |user|
+  loop do
+    i += 1
+    LanguageSkill.create!(user_id: user.id, language_id: all_languages.sample.id)
+    if i >= rand(1..3)
+      break
+    end
+  end
+end

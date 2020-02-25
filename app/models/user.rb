@@ -10,5 +10,5 @@ class User < ApplicationRecord
   has_many :qualifications, through: :user_qualifications
   has_many :language_skills
   has_many :languages, through: :language_skills
-  validates_presence_of :first_name, :last_name, :phone_number, :age
+  validates_presence_of :first_name, :last_name
 end

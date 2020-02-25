@@ -26,6 +26,6 @@ class UsersController < ApplicationController
       sum += review.rating
     end
     return 0 if teacher.reviews.length.zero?
-    sum / teacher.reviews.length
+    sum.to_f / teacher.reviews.length
   end
 end

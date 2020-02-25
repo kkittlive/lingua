@@ -1,29 +1,15 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "/", class: "navbar-brand" do %>
-    <span class="nav-item logo">Lingua</span>
-  <% end %>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <%= link_to "Search classes", "/", class: "nav-link" %>
-      </li>
-      <li class="nav-item dropdown">
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Action", "#", class: "dropdown-item" %>
-          <%= link_to "Another action", "#", class: "dropdown-item" %>
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>
-
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1489348611450-4c0d746d949b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80');">
   <div class="container">
     <p class="text-center">
     <span id="banner-typed-text"></span>
     </p>
+<!--
+    <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+    <%= f.input :location, input_html: {value: ""} %>
+    <%= f.input :language, input_html: {value: ""} %>
+    <%= f.submit "Search", class: "btn btn-primary" %>
+    <% end %>
+ -->
     <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
       <div class="search-form-control form-group">
         <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="What language would you like to study?"/>
@@ -54,6 +40,53 @@
     <div class="location">
       <p>Buenos Aires, Argentina</p>
     </div>
+    <div class="text-center">
+      <%= link_to "Book a class", "/", class: "btn btn-ghost" %>
+    </div>
+  </div>
+  <div class="card-category">
+    <div class="icon-container">
+      <img class="icon" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80">
+    </div>
+    <div class="name">
+      <p>Marina Jones</p>
+    </div>
+    <div class="languages">
+      <img class="flag" src="https://images.pexels.com/photos/344775/pexels-photo-344775.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+      <img class="flag" src="https://images.pexels.com/photos/344775/pexels-photo-344775.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+      <img class="flag" src="https://images.pexels.com/photos/344775/pexels-photo-344775.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+    </div>
+    <div class="qualifications">
+      <p>Qualification #1. Qualification #2. Qualification #3.</p>
+    </div>
+    <div class="location">
+      <p>New York, USA</p>
+    </div>
+    <div class="text-center">
+      <%= link_to "Book a class", "/", class: "btn btn-ghost" %>
+    </div>
+  </div>
+  <div class="card-category">
+    <div class="icon-container">
+      <img class="icon" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80">
+    </div>
+    <div class="name">
+      <p>Marina Jones</p>
+    </div>
+    <div class="languages">
+      <img class="flag" src="https://images.pexels.com/photos/344775/pexels-photo-344775.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+      <img class="flag" src="https://images.pexels.com/photos/344775/pexels-photo-344775.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+      <img class="flag" src="https://images.pexels.com/photos/344775/pexels-photo-344775.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+    </div>
+    <div class="qualifications">
+      <p>Qualification #1. Qualification #2. Qualification #3.</p>
+    </div>
+    <div class="location">
+      <p>Singapore</p>
+    </div>
+    <div class="text-center">
+      <%= link_to "Book a class", "/", class: "btn btn-ghost" %>
+    </div>
   </div>
   <div class="card-category">
     <div class="icon-container">
@@ -73,24 +106,8 @@
     <div class="location">
       <p>Buenos Aires, Argentina</p>
     </div>
-  </div>
-  <div class="card-category">
-    <div class="icon-container">
-      <img class="icon" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80">
-    </div>
-    <div class="name">
-      <p>Marina Jones</p>
-    </div>
-    <div class="languages">
-      <img class="flag" src="https://images.pexels.com/photos/344775/pexels-photo-344775.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-      <img class="flag" src="https://images.pexels.com/photos/344775/pexels-photo-344775.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-      <img class="flag" src="https://images.pexels.com/photos/344775/pexels-photo-344775.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-    </div>
-    <div class="qualifications">
-      <p>Qualification #1. Qualification #2. Qualification #3.</p>
-    </div>
-    <div class="location">
-      <p>Buenos Aires, Argentina</p>
+    <div class="text-center">
+      <%= link_to "Book a class", "/", class: "btn btn-ghost" %>
     </div>
   </div>
   <div class="card-category">
@@ -111,24 +128,8 @@
     <div class="location">
       <p>Buenos Aires, Argentina</p>
     </div>
-  </div>
-  <div class="card-category">
-    <div class="icon-container">
-      <img class="icon" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80">
-    </div>
-    <div class="name">
-      <p>Marina Jones</p>
-    </div>
-    <div class="languages">
-      <img class="flag" src="https://images.pexels.com/photos/344775/pexels-photo-344775.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-      <img class="flag" src="https://images.pexels.com/photos/344775/pexels-photo-344775.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-      <img class="flag" src="https://images.pexels.com/photos/344775/pexels-photo-344775.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-    </div>
-    <div class="qualifications">
-      <p>Qualification #1. Qualification #2. Qualification #3.</p>
-    </div>
-    <div class="location">
-      <p>Buenos Aires, Argentina</p>
+    <div class="text-center">
+      <%= link_to "Book a class", "/", class: "btn btn-ghost" %>
     </div>
   </div>
   <div class="card-category">
@@ -148,6 +149,9 @@
     </div>
     <div class="location">
       <p>Buenos Aires, Argentina</p>
+    </div>
+    <div class="text-center">
+      <%= link_to "Book a class", "/", class: "btn btn-ghost" %>
     </div>
   </div>
 </div>

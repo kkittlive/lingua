@@ -1,8 +1,8 @@
 
 const initUpdateNavbarOnScroll = () => {
-  const navbar = document.querySelector('.navbar-lewagon');
-  const navbar_content = document.querySelector('.nav-link');
-  const logo = document.querySelector('.logo');
+  const navbar = document.querySelector('.navbar-lewagon.scroll');
+  const navbar_content = document.querySelector('.nav-link.scroll');
+  const logo = document.querySelector('.logo.scroll');
   if (navbar) {
     window.addEventListener('scroll', () => {
       if (window.scrollY >= 400) {

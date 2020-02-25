@@ -8,7 +8,7 @@
   transition: 0.5s background-color ease;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-collapse {
   flex-grow: 0;
 }
 
@@ -31,7 +31,10 @@
 }
 
 .navbar-lewagon-white {
-  background-color: white;
+  justify-content: space-between;
+  z-index: 10;
+  width: 100%;
+  background-color: white !important;
 }
 
 .nav-item-black {

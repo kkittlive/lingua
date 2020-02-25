@@ -15,7 +15,6 @@ user_seed = [
     phone_number: '999 888 7777',
     age: 25,
     gender: 'female',
-    language: 'english',
     location: 'Chicago, USA',
     availability: 'weekday mornings',
     biography: "I'm baby anim tattooed activated charcoal, chillwave banjo letterpress incididunt man braid pickled palo santo. Laboris 3 wolf moon pork belly cliche mumblecore beard PBR&B, est heirloom chia shaman. Cornhole waistcoat biodiesel pitchfork. Tumeric lo-fi raclette, hexagon ramps hammock slow-carb letterpress XOXO mixtape DIY ut meh pour-over. Literally vegan do etsy aliqua edison bulb deep v qui. Enamel pin culpa fugiat copper mug celiac chambray unicorn locavore raclette wolf four dollar toast four loko kale chips poke master cleanse. Messenger bag freegan tempor gentrify, yr butcher ugh umami.",
@@ -28,7 +27,6 @@ user_seed = [
     phone_number: '999 888 7777',
     age: 32,
     gender: 'female',
-    language: 'english',
     location: 'Sydney, Australia',
     availability: 'weekends',
     biography: "Vegan ramps ut palo santo dolor knausgaard consectetur pok pok echo park. Letterpress chambray typewriter hoodie roof party officia elit humblebrag direct trade helvetica do. Williamsburg letterpress raw denim DIY in pinterest kogi culpa dolore dreamcatcher slow-carb irony subway tile fingerstache. Post-ironic ut four dollar toast, live-edge iceland incididunt lo-fi. Paleo mumblecore normcore pug craft beer, exercitation hella forage viral schlitz.",
@@ -41,7 +39,6 @@ user_seed = [
     phone_number: '999 888 7777',
     age: 19,
     gender: 'male',
-    language: 'portugese',
     location: 'Rio de Janeiro, Brazil',
     availability: 'monday wednesday friday evenings',
     biography: "Viral est waistcoat helvetica, church-key deserunt jean shorts. Fugiat direct trade food truck exercitation, lorem duis blog hoodie tattooed aliquip art party cray affogato irure kogi. In franzen typewriter scenester copper mug poke. Stumptown meditation pug, aliqua mixtape direct trade labore fixie waistcoat. Kogi coloring book vexillologist knausgaard.",
@@ -54,7 +51,6 @@ user_seed = [
     phone_number: '999 888 7777',
     age: 37,
     gender: 'male',
-    language: 'mandarin',
     location: 'Beijing, China',
     availability: 'all day every day',
     biography: "I'm baby laborum umami kombucha hella chia ad incididunt synth. Shoreditch hot chicken coloring book, single-origin coffee yuccie mollit pinterest sint disrupt waistcoat. Gentrify aute migas hammock umami before they sold out proident kinfolk tbh raclette keytar. Bushwick franzen jean shorts sint beard organic edison bulb direct trade semiotics celiac salvia craft beer umami.",
@@ -67,7 +63,6 @@ user_seed = [
     phone_number: '999 888 7777',
     age: 29,
     gender: 'male',
-    language: 'french',
     location: 'Bordeaux, France',
     availability: 'weekdays mid-day',
     biography: "Single-origin coffee pitchfork meh, pop-up velit stumptown hoodie af pariatur tumeric banjo yuccie kogi celiac. Deserunt disrupt officia, succulents lo-fi XOXO authentic kogi salvia asymmetrical tumeric cupidatat woke et. 8-bit iPhone adipisicing, direct trade neutra raw denim food truck. Photo booth ramps activated charcoal whatever flexitarian vegan godard.",
@@ -80,7 +75,6 @@ user_seed = [
     phone_number: '999 888 7777',
     age: 56,
     gender: 'male',
-    language: 'english',
     location: 'London, England',
     availability: 'every evening',
     biography: "Magna farm-to-table crucifix succulents. Flexitarian poke deep v flannel, exercitation humblebrag art party. Dolore franzen scenester blue bottle, +1 aute waistcoat est. Ut small batch hoodie butcher.",
@@ -93,7 +87,6 @@ user_seed = [
     phone_number: '999 888 7777',
     age: 37,
     gender: 'female',
-    language: 'spanish',
     location: 'Buenos Aires, Argentina',
     availability: 'mornings',
     biography: "Affogato la croix umami, 90's authentic selvage craft beer lomo lorem mumblecore yr. Cardigan flexitarian post-ironic kinfolk, quinoa master cleanse hell of blog cloud bread voluptate helvetica asymmetrical ut. Twee do vape thundercats seitan ad. Velit iPhone ramps edison bulb you probably haven't heard of them occupy, flannel fam pabst messenger bag anim kitsch direct trade vaporware keffiyeh. Tbh locavore plaid poke. Yr meggings tilde humblebrag, YOLO ut affogato hoodie flexitarian mlkshk fixie jean shorts la croix chia laboris.",
@@ -106,7 +99,6 @@ user_seed = [
     phone_number: '999 888 7777',
     age: 43,
     gender: 'female',
-    language: 'italian',
     location: 'Palermo, Italy',
     availability: 'weekends',
     biography: "Hot chicken taiyaki venmo letterpress. Vexillologist aliquip post-ironic four dollar toast quinoa. Disrupt fixie yr, kogi tattooed lomo roof party. Gastropub culpa dolor chia venmo XOXO lorem. Tumblr duis aliquip, pug hashtag glossier letterpress bitters aliqua kitsch ad twee umami.",
@@ -119,7 +111,6 @@ user_seed = [
     phone_number: '999 888 7777',
     age: 22,
     gender: 'female',
-    language: 'japanese',
     location: 'Osaka, Japan',
     availability: 'mornings',
     biography: "I'm baby chia lyft cray pariatur umami sunt dolore street art tote bag schlitz master cleanse yr. Etsy selvage blog tilde ea neutra wolf vexillologist in disrupt aliqua godard meditation vice trust fund. Pour-over kickstarter crucifix schlitz. Magna twee 90's, elit iPhone commodo iceland thundercats roof party blog banh mi typewriter yr nulla.",
@@ -132,7 +123,6 @@ user_seed = [
     phone_number: '999 888 7777',
     age: 26,
     gender: 'male',
-    language: 'polish',
     location: 'Rzeszów, Poland',
     availability: 'mondays and wednesdays',
     biography: "Qui tousled twee consectetur post-ironic fixie man bun bitters thundercats unicorn fanny pack pug in. Sunt quinoa polaroid blog bushwick adipisicing. Nostrud blue bottle commodo hot chicken, dolor veniam tumeric. Commodo chillwave vinyl, lyft kickstarter hella ut four dollar toast la croix dolor dreamcatcher poutine etsy. Bespoke taxidermy ramps nostrud. Id locavore polaroid, irure gluten-free viral helvetica in non commodo narwhal selvage ugh tumblr. Hoodie truffaut tousled letterpress vape craft beer taxidermy.",
@@ -140,6 +130,7 @@ user_seed = [
   },
 ]
 
+User.destroy_all
 User.create!(user_seed)
 
 qualification_seed = [
@@ -166,4 +157,33 @@ qualification_seed = [
   {title: 'TESOL certified'}
 ]
 
+Qualification.destroy_all
 Qualification.create!(qualification_seed)
+
+language_seed = [
+  { name: 'Mandarin', flag: 'temp' },
+  { name: 'English', flag: 'temp' },
+  { name: 'Spanish', flag: 'temp' },
+  { name: 'Arabic', flag: 'temp' },
+  { name: 'Bengali', flag: 'temp' },
+  { name: 'Hindi', flag: 'temp' },
+  { name: 'Russian', flag: 'temp' },
+  { name: 'Portuguese', flag: 'temp' },
+  { name: 'Japanese', flag: 'temp' },
+  { name: 'German', flag: 'temp' },
+  { name: 'Japanese', flag: 'temp' },
+  { name: 'Korean', flag: 'temp' },
+  { name: 'French', flag: 'temp' },
+  { name: 'Turkish', flag: 'temp' },
+  { name: 'Vietnamese', flag: 'temp' },
+  { name: 'Telugu', flag: 'temp' },
+  { name: 'Italian', flag: 'temp' },
+  { name: 'Polish', flag: 'temp' },
+  { name: 'Ukrainian', flag: 'temp' },
+  { name: 'Persian', flag: 'temp' },
+  { name: 'Thai', flag: 'temp' },
+  { name: 'Dutch', flag: 'temp' }
+]
+
+Language.destroy_all
+Language.create!(language_seed)

@@ -11,7 +11,7 @@ class LessonsController < ApplicationController
     else
       flash[:alert] = 'There was a problem with your lesson.'
     end
-    redirect_to user_path(teacher.id)
+    redirect_to users_dashboard_path
   end
 
   def edit

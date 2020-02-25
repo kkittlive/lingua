@@ -10,6 +10,3 @@ class User < ApplicationRecord
   has_many :qualifications, through: :user_qualifications
   validates_presence_of :first_name, :last_name, :phone_number, :age
 end
-
-
-# WE ARE MISSING THE HAS MANY REVIEWS THROUGH LESSONS

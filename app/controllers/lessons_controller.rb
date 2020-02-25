@@ -1,7 +1,7 @@
 class LessonsController < ApplicationController
   def create
-    authorize @lesson
     @lesson = Lesson.new(lesson_params)
+    authorize @lesson
     if @lesson.save
       flash.now[:notice] = 'Lesson booked!'
     else

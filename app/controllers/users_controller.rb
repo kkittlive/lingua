@@ -1,15 +1,17 @@
 class UsersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @teachers = policy_scope(User)
   end
 
   def show
-    authorize @user
     @teacher = User.find(params[:id])
+    authorize @teacher
   end
 
   def dashboard
-    authorize @user
     @user = current_user
+    authorize @user
   end
 end

@@ -6,6 +6,7 @@ class ReviewsController < ApplicationController
     else
       flash.now[:alert] = 'There was a problem with your review.'
     end
+    redirect_to user_path
   end
 
   private

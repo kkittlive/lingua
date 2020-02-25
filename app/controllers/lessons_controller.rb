@@ -6,6 +6,7 @@ class LessonsController < ApplicationController
     else
       flash.now[:alert] = 'There was a problem with your lesson.'
     end
+    redirect_to user_path
   end
 
   def edit

@@ -8,6 +8,8 @@ class UsersController < ApplicationController
   def show
     @teacher = User.find(params[:id])
     authorize @teacher
+    @lesson = Lesson.new
+    @user = current_user
   end
 
   def dashboard

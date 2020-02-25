@@ -28,14 +28,18 @@
       </div>
       <div class="lessons-form">
         <h3>Book a Lesson</h3>
+          <%= simple_form_for [@lesson] do |f| %>
+            <%= f.input :student_id, as: :hidden, input_html: { value: @user.id } %>
+            <%= f.input :teacher_id, as: :hidden, input_html: { value: @teacher.id } %>
+            <%= f.input :date %>
+            <%= f.input :location %>
+            <%= f.button :submit, class: "btn btn-ghost" %>
+          <% end %>
       </div>
     </div>
     <div class="teacher-buttons">
       <div class="text-center">
         <%= link_to "Back to List", "/", class: "btn btn-ghost" %>
-      </div>
-      <div class="text-center">
-        <%= link_to "Request Lesson", "/", class: "btn btn-ghost" %>
       </div>
     </div>
   </div>

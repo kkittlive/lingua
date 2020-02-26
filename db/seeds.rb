@@ -198,18 +198,18 @@ all_users.each do |user|
 end
 
 language_seed = [
-  { name: 'Mandarin', flag: asset_path('flags/cn.png') },
-  { name: 'English', flag: asset_path('flags/ca.png') },
-  { name: 'Spanish', flag: asset_path('flags/es.png') },
-  { name: 'Bengali', flag: asset_path('flags/ne.png') },
-  { name: 'Greek', flag: asset_path('flags/gr.png') },
-  { name: 'Portuguese', flag: asset_path('flags/pr.png') },
-  { name: 'Japanese', flag: asset_path('flags/jp.png') },
-  { name: 'German', flag: asset_path('flags/de.png') },
-  { name: 'French', flag: asset_path('flags/fr.png') },
-  { name: 'Vietnamese', flag: asset_path('flags/vn.png') },
-  { name: 'Italian', flag: asset_path('flags/it.png') },
-  { name: 'Thai', flag: asset_path('flags/th.png') },
+  { name: 'Mandarin', flag: 'flags/cn.png' },
+  { name: 'English', flag: 'flags/ca.png' },
+  { name: 'Spanish', flag: 'flags/es.png' },
+  { name: 'Bengali', flag: 'flags/ne.png' },
+  { name: 'Greek', flag: 'flags/gr.png' },
+  { name: 'Portuguese', flag: 'flags/pr.png' },
+  { name: 'Japanese', flag: 'flags/jp.png' },
+  { name: 'German', flag: 'flags/de.png' },
+  { name: 'French', flag: 'flags/fr.png' },
+  { name: 'Vietnamese', flag: 'flags/vn.png' },
+  { name: 'Italian', flag: 'flags/it.png' },
+  { name: 'Thai', flag: 'flags/th.png' }
 ]
 
 Language.create!(language_seed)

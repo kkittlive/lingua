@@ -5,7 +5,6 @@ class LessonsController < ApplicationController
     @lesson = Lesson.new(lesson_params)
     @lesson.teacher = teacher
     @lesson.student = student
-    @lesson.date = Date.new(params[:lesson][:date])
     authorize @lesson
     if @lesson.save
       flash[:alert] = 'Lesson booked!'

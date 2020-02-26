@@ -32,7 +32,7 @@
 
   <div class="teacher-card card-category-large">
     <div class="teacher-background">
-      <img class="teacher-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80">
+      <img class="teacher-avatar" src="<%= asset_path 'default-avatar.svg' %>">
       <div class="teacher-info">
         <h1><b><%= @teacher.first_name %> <%= @teacher.last_name %></b></h1>
         <h3><%= @teacher.location %></h3>
@@ -41,7 +41,7 @@
         <br>
         <h6>Qualification #1. Qualification #2. Qualification #3. Qualification #4. Qualification #5. Qualification #6. Qualification #7.</h6>
       </div>
-      <img class="teacher-flag" src="https://images.pexels.com/photos/344775/pexels-photo-344775.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+      <img class="teacher-flag" src="<%= asset_path @teacher.languages.first.flag %>">
     </div>
     <div class="teacher-bio">
       <h3>Biography</h3>
@@ -60,7 +60,7 @@
           <%= simple_form_for [@lesson] do |f| %>
             <%= f.input :student_id, as: :hidden, input_html: { value: @user.id } %>
             <%= f.input :teacher_id, as: :hidden, input_html: { value: @teacher.id } %>
-            <%= f.input :date %>
+            <%= f.input :date, as: :string, input_html: { class: 'datepicker'} %>
             <%= f.input :location %>
             <div class="teacher-buttons">
               <%= link_to "Back to Teacher List", "/", class: "btn btn-ghost" %>

@@ -5,6 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+UserQualification.destroy_all
+LanguageSkill.destroy_all
+Qualification.destroy_all
+Language.destroy_all
 User.destroy_all
 
 user_seed = [
@@ -128,9 +133,32 @@ user_seed = [
     biography: "Qui tousled twee consectetur post-ironic fixie man bun bitters thundercats unicorn fanny pack pug in. Sunt quinoa polaroid blog bushwick adipisicing. Nostrud blue bottle commodo hot chicken, dolor veniam tumeric. Commodo chillwave vinyl, lyft kickstarter hella ut four dollar toast la croix dolor dreamcatcher poutine etsy. Bespoke taxidermy ramps nostrud. Id locavore polaroid, irure gluten-free viral helvetica in non commodo narwhal selvage ugh tumblr. Hoodie truffaut tousled letterpress vape craft beer taxidermy.",
     is_teacher: false
   },
+  { email: 'testing@testing.com',
+    password: '12345678',
+    first_name: 'James',
+    last_name: 'Loomos',
+    phone_number: '999 888 7777',
+    age: 26,
+    gender: 'male',
+    location: 'Toronto, Canada',
+    availability: 'mondays and wednesdays',
+    biography: "Qui tousled twee consectetur post-ironic fixie man bun bitters thundercats unicorn fanny pack pug in. Sunt quinoa polaroid blog bushwick adipisicing. Nostrud blue bottle commodo hot chicken, dolor veniam tumeric. Commodo chillwave vinyl, lyft kickstarter hella ut four dollar toast la croix dolor dreamcatcher poutine etsy. Bespoke taxidermy ramps nostrud. Id locavore polaroid, irure gluten-free viral helvetica in non commodo narwhal selvage ugh tumblr. Hoodie truffaut tousled letterpress vape craft beer taxidermy.",
+    is_teacher: false
+  },
+  { email: 'jrnld@jrnld.com',
+    password: '12345678',
+    first_name: 'Emilie',
+    last_name: 'Drop',
+    phone_number: '999 888 7777',
+    age: 27,
+    gender: 'female',
+    location: 'Buenos Aires, Argentina',
+    availability: 'mondays and wednesdays',
+    biography: "Qui tousled twee consectetur post-ironic fixie man bun bitters thundercats unicorn fanny pack pug in. Sunt quinoa polaroid blog bushwick adipisicing. Nostrud blue bottle commodo hot chicken, dolor veniam tumeric. Commodo chillwave vinyl, lyft kickstarter hella ut four dollar toast la croix dolor dreamcatcher poutine etsy. Bespoke taxidermy ramps nostrud. Id locavore polaroid, irure gluten-free viral helvetica in non commodo narwhal selvage ugh tumblr. Hoodie truffaut tousled letterpress vape craft beer taxidermy.",
+    is_teacher: false
+  }
 ]
 
-User.destroy_all
 User.create!(user_seed)
 
 qualification_seed = [
@@ -157,33 +185,39 @@ qualification_seed = [
   {title: 'TESOL certified'}
 ]
 
-Qualification.destroy_all
 Qualification.create!(qualification_seed)
 
+all_users = User.where(is_teacher: true)
+all_qualifications = Qualification.all
+
+
+all_users.each do |user|
+  rand(3..6).times do
+    UserQualification.create(user_id: user.id, qualification_id: all_qualifications.sample.id)
+  end
+end
+
 language_seed = [
-  { name: 'Mandarin', flag: 'temp' },
-  { name: 'English', flag: 'temp' },
-  { name: 'Spanish', flag: 'temp' },
-  { name: 'Arabic', flag: 'temp' },
-  { name: 'Bengali', flag: 'temp' },
-  { name: 'Hindi', flag: 'temp' },
-  { name: 'Russian', flag: 'temp' },
-  { name: 'Portuguese', flag: 'temp' },
-  { name: 'Japanese', flag: 'temp' },
-  { name: 'German', flag: 'temp' },
-  { name: 'Japanese', flag: 'temp' },
-  { name: 'Korean', flag: 'temp' },
-  { name: 'French', flag: 'temp' },
-  { name: 'Turkish', flag: 'temp' },
-  { name: 'Vietnamese', flag: 'temp' },
-  { name: 'Telugu', flag: 'temp' },
-  { name: 'Italian', flag: 'temp' },
-  { name: 'Polish', flag: 'temp' },
-  { name: 'Ukrainian', flag: 'temp' },
-  { name: 'Persian', flag: 'temp' },
-  { name: 'Thai', flag: 'temp' },
-  { name: 'Dutch', flag: 'temp' }
+  { name: 'Mandarin', flag: 'flags/cn.png' },
+  { name: 'English', flag: 'flags/ca.png' },
+  { name: 'Spanish', flag: 'flags/es.png' },
+  { name: 'Bengali', flag: 'flags/ne.png' },
+  { name: 'Greek', flag: 'flags/gr.png' },
+  { name: 'Portuguese', flag: 'flags/pr.png' },
+  { name: 'Japanese', flag: 'flags/jp.png' },
+  { name: 'German', flag: 'flags/de.png' },
+  { name: 'French', flag: 'flags/fr.png' },
+  { name: 'Vietnamese', flag: 'flags/vn.png' },
+  { name: 'Italian', flag: 'flags/it.png' },
+  { name: 'Thai', flag: 'flags/th.png' }
 ]
 
-Language.destroy_all
 Language.create!(language_seed)
+
+all_languages = Language.all
+
+all_users.each do |user|
+  rand(1..3).times do
+    LanguageSkill.create!(user_id: user.id, language_id: all_languages.sample.id)
+  end
+end

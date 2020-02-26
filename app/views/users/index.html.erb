@@ -49,7 +49,11 @@
   <% @teachers.each do |teacher| %>
   <div class="card-category">
     <div class="icon-container">
-      <img class="icon" src="<%= asset_path 'default-avatar.svg' %>">
+      <% if teacher.photo.attached? %>
+        <%= cl_image_tag teacher.photo.key, height: 500, width: 400, crop: :fill, class: "icon" %>
+      <% else %>
+        <%= image_tag 'default-avatar.svg', class: "icon" %>
+      <% end %>
     </div>
     <div class="name">
       <p><%= teacher.first_name %> <%= teacher.last_name %></p>

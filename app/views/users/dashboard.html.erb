@@ -36,7 +36,11 @@
       <div class="profile row">
         <div class="profile-info col-lg-3 col-md-12 col-sm-12">
           <div class="icon-container">
-            <img class="icon" src="<%= asset_path 'default-avatar.svg' %>">
+            <% if @user.photo.attached? %>
+              <%= cl_image_tag @user.photo.key, height: 500, width: 400, crop: :fill, class: "icon" %>
+            <% else %>
+              <%= image_tag 'default-avatar.svg', class: "icon" %>
+            <% end %>
           </div>
           <div class="profile-info-list">
             <ul>

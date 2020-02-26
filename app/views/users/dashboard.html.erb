@@ -1,73 +1,76 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon-white">
-  <%= link_to "/", class: "navbar-brand" do %>
-    <span class="nav-item logo logo-black">Lingua</span>
-  <% end %>
+<div class="dashboard-body">
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon-white">
+    <%= link_to "/", class: "navbar-brand" do %>
+      <span class="nav-item logo logo-black">Lingua</span>
+    <% end %>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <%= link_to "Search classes", "/", class: "nav-link nav-item-black" %>
-      </li>
-      <% if user_signed_in? %>
-        <li class="nav-item dropdown d-flex align-content-center">
-          <div class="d-flex align-items-center"><%= image_tag "https://www.tuktukdesign.com/wp-content/uploads/2020/01/profile-icon-vector.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "My account", users_dashboard_path, class: "dropdown-item" %>
-            <%= link_to "Logout", destroy_user_session_path, class: "dropdown-item", method: :delete %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <%= link_to "Search classes", "/", class: "nav-link nav-item-black" %>
+        </li>
+        <% if user_signed_in? %>
+          <li class="nav-item dropdown d-flex align-content-center">
+            <div class="d-flex align-items-center"><%= image_tag "https://www.tuktukdesign.com/wp-content/uploads/2020/01/profile-icon-vector.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <%= link_to "My account", users_dashboard_path, class: "dropdown-item" %>
+              <%= link_to "Logout", destroy_user_session_path, class: "dropdown-item", method: :delete %>
+            </div>
           </div>
-        </div>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Log in", "/users/sign_in", class: "nav-link nav-item-black" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Sign up", "/users/sign_up", class: "nav-link nav-item-black" %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-</div>
-
-<div class="container">
-  <h2 class="text-center">My account</h2>
-<div class="profile row">
-  <div class="profile-info col-lg-4 col-md-12 col-sm-12">
-    <div class="icon-container">
-      <img class="icon" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80">
-    </div>
-    <div class="profile-info-list">
-      <ul>
-        <li>First name: <%= @user.first_name %></li>
-        <li>Last name: <%= @user.last_name %></li>
-        <li>E-mail: <%= @user.last_name %></li>
-        <li>Phone: <%= @user.phone_number %></li>
-        <li>Gender: <%= @user.gender %></li>
-        <li>Location: <%= @user.location %></li>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Log in", "/users/sign_in", class: "nav-link nav-item-black" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Sign up", "/users/sign_up", class: "nav-link nav-item-black" %>
+          </li>
+        <% end %>
       </ul>
     </div>
-    <div class="text-center">
-      <%= link_to "Edit profile", "/", class: "btn btn-ghost" %>
+  </div>
+
+  <div class="container-fluid">
+    <div class="card-category-dashboard">
+      <h2 class="text-center">My account</h2>
+      <div class="profile row">
+        <div class="profile-info col-lg-3 col-md-12 col-sm-12">
+          <div class="icon-container">
+            <img class="icon" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80">
+          </div>
+          <div class="profile-info-list">
+            <ul>
+              <li><b>First name:</b> <%= @user.first_name %></li>
+              <li><b>Last name:</b> <%= @user.last_name %></li>
+              <li><b>E-mail:</b> <%= @user.email %></li>
+              <li><b>Phone:</b> <%= @user.phone_number %></li>
+              <li><b>Gender:</b> <%= @user.gender.capitalize %></li>
+              <li><b>Location:</b> <%= @user.location %></li>
+            </ul>
+          </div>
+          <div class="text-center">
+            <%= link_to "Edit profile", "/", class: "btn btn-ghost" %>
+          </div>
+        </div>
+
+        <div class="profile-classes col-lg-8 col-md-12 col-sm-12">
+          <ul class="nav nav-pills nav-fill mb-3" id="pills-tab" role="tablist">
+            <% Lesson::STATE.each do |state| %>
+              <li class="nav-item">
+                <a class="nav-link <%= state == 'confirmed' ? 'active' : '' %>" id="pills-<%= state %>-tab" data-toggle="pill" href="#pills-<%= state %>" role="tab" aria-controls="pills-<%= state %>" aria-selected="true"><%= state.capitalize %> classes</a>
+              </li>
+            <% end %>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <% Lesson::STATE.each do |state| %>
+              <%= render "status", state: state, lessons: @user.lessons.select { |lesson| lesson.status == state } %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+        <div class="profile-resources">
+        </div>
     </div>
   </div>
-
-  <div class="profile-classes col-lg-8 col-md-12 col-sm-12">
-    <ul class="nav nav-pills nav-fill mb-3" id="pills-tab" role="tablist">
-      <% Lesson::STATE.each do |state| %>
-        <li class="nav-item">
-          <a class="nav-link <%= state == 'confirmed' ? 'active' : '' %>" id="pills-<%= state %>-tab" data-toggle="pill" href="#pills-<%= state %>" role="tab" aria-controls="pills-<%= state %>" aria-selected="true"><%= state.capitalize %> classes</a>
-        </li>
-      <% end %>
-    </ul>
-    <div class="tab-content" id="pills-tabContent">
-      <% Lesson::STATE.each do |state| %>
-        <%= render "status", state: state, lessons: @user.lessons.select { |lesson| lesson.status == state } %>
-      <% end %>
-    </div>
-  </div>
-</div>
-
-  <div class="profile-resources">
-  </div>
-
 </div>

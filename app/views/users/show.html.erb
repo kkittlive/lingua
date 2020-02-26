@@ -32,7 +32,11 @@
 
   <div class="teacher-card card-category-large">
     <div class="teacher-background">
-      <img class="teacher-avatar" src="<%= asset_path 'default-avatar.svg' %>">
+      <% if @teacher.photo.attached? %>
+        <%= cl_image_tag @teacher.photo.key, height: 500, width: 400, crop: :fill, class: "teacher-avatar" %>
+      <% else %>
+        <%= image_tag 'default-avatar.svg', class: "teacher-avatar" %>
+      <% end %>
       <div class="teacher-info">
         <h1><b><%= @teacher.first_name %> <%= @teacher.last_name %></b></h1>
         <h3><%= @teacher.location %></h3>

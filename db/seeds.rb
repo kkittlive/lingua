@@ -133,6 +133,30 @@ user_seed = [
     biography: "Qui tousled twee consectetur post-ironic fixie man bun bitters thundercats unicorn fanny pack pug in. Sunt quinoa polaroid blog bushwick adipisicing. Nostrud blue bottle commodo hot chicken, dolor veniam tumeric. Commodo chillwave vinyl, lyft kickstarter hella ut four dollar toast la croix dolor dreamcatcher poutine etsy. Bespoke taxidermy ramps nostrud. Id locavore polaroid, irure gluten-free viral helvetica in non commodo narwhal selvage ugh tumblr. Hoodie truffaut tousled letterpress vape craft beer taxidermy.",
     is_teacher: true
   },
+  { email: 'testing@testing.com',
+    password: '12345678',
+    first_name: 'James',
+    last_name: 'Loomos',
+    phone_number: '999 888 7777',
+    age: 26,
+    gender: 'male',
+    location: 'Toronto, Canada',
+    availability: 'mondays and wednesdays',
+    biography: "Qui tousled twee consectetur post-ironic fixie man bun bitters thundercats unicorn fanny pack pug in. Sunt quinoa polaroid blog bushwick adipisicing. Nostrud blue bottle commodo hot chicken, dolor veniam tumeric. Commodo chillwave vinyl, lyft kickstarter hella ut four dollar toast la croix dolor dreamcatcher poutine etsy. Bespoke taxidermy ramps nostrud. Id locavore polaroid, irure gluten-free viral helvetica in non commodo narwhal selvage ugh tumblr. Hoodie truffaut tousled letterpress vape craft beer taxidermy.",
+    is_teacher: false
+  },
+  { email: 'jrnld@jrnld.com',
+    password: '12345678',
+    first_name: 'Emilie',
+    last_name: 'Drop',
+    phone_number: '999 888 7777',
+    age: 27,
+    gender: 'female',
+    location: 'Buenos Aires, Argentina',
+    availability: 'mondays and wednesdays',
+    biography: "Qui tousled twee consectetur post-ironic fixie man bun bitters thundercats unicorn fanny pack pug in. Sunt quinoa polaroid blog bushwick adipisicing. Nostrud blue bottle commodo hot chicken, dolor veniam tumeric. Commodo chillwave vinyl, lyft kickstarter hella ut four dollar toast la croix dolor dreamcatcher poutine etsy. Bespoke taxidermy ramps nostrud. Id locavore polaroid, irure gluten-free viral helvetica in non commodo narwhal selvage ugh tumblr. Hoodie truffaut tousled letterpress vape craft beer taxidermy.",
+    is_teacher: false
+  }
 ]
 
 User.create!(user_seed)

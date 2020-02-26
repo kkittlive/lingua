@@ -55,7 +55,7 @@
         <p><%= teacher.first_name %> <%= teacher.last_name %></p>
       </div>
       <div class="languages">
-        <img class="flag" src="<%= asset_path teacher.languages.first.flag %>">
+        <img class="flag" src="<%= teacher.languages.empty? ? asset_path('flags/ca.png') : asset_path(teacher.languages.first.flag) %>">
       </div>
       <div class="qualifications">
         <p><b>Availability:</b> <%= teacher.availability.capitalize %></p>

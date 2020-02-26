@@ -41,7 +41,7 @@
         <br>
         <h6>Qualification #1. Qualification #2. Qualification #3. Qualification #4. Qualification #5. Qualification #6. Qualification #7.</h6>
       </div>
-      <img class="teacher-flag" src="<%= asset_path @teacher.languages.first.flag %>">
+      <img class="teacher-flag" src="<%= @teacher.languages.empty? ? asset_path('flags/ca.png') : asset_path(@teacher.languages.first.flag) %>">
     </div>
     <div class="teacher-bio">
       <h3>Biography</h3>

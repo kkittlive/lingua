@@ -67,7 +67,7 @@
       <p><b>Availability:</b> <%= teacher.availability.capitalize %></p>
     </div>
     <div class="location">
-      <p><%= teacher.location %></p>
+      <p><em><%= teacher.location %></em></p>
     </div>
     <div class="text-center">
       <%= link_to "Book a lesson", "/users/#{teacher.id}", class: "btn btn-ghost" %>

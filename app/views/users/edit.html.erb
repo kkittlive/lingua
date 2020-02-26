@@ -4,6 +4,7 @@
       <div class="log-form">
         <h1><b>Edit Your Information</b></h1>
       <%= simple_form_for [@user] do |f| %>
+        <%= f.input :photo, as: :file %>
         <%= f.input :first_name, input_html: { class: 'form-control' } %>
         <%= f.input :last_name, input_html: { class: 'form-control' } %>
         <%= f.input :email, input_html: { class: 'form-control' } %>

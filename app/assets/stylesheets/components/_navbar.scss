@@ -14,11 +14,18 @@
 
 .navbar-light .navbar-nav .nav-link {
   color: white;
-  transition: 0.5s color ease;
+  padding: 8px;
+  margin: 8px 16px;
+  opacity: .4;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 4px solid transparent;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-light .navbar-nav .nav-link:hover {
+  opacity: 1;
+  color: white;
+  border-bottom: 2px solid white;
 }
 
 .logo {
@@ -40,6 +47,13 @@
 
 .nav-item-black {
   color: black !important;
+  border-bottom: 4px solid transparent;
+}
+
+.nav-item-black:hover {
+  opacity: 1;
+  color: black;
+  border-bottom: 2px solid black !important;
 }
 
 .logo-black {

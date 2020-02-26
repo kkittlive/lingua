@@ -25,6 +25,10 @@
           <%= f.input :password_confirmation,
                       required: true,
                       input_html: { autocomplete: "new-password" } %>
+          <b><%= f.input :is_teacher,
+                      required: false,
+                      autofocus: true,
+                      label: "Check if you are a teacher."%></b>
         </div>
 
         <div class="form-actions">

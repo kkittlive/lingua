@@ -131,7 +131,7 @@ user_seed = [
     location: 'Rzeszów, Poland',
     availability: 'mondays and wednesdays',
     biography: "Qui tousled twee consectetur post-ironic fixie man bun bitters thundercats unicorn fanny pack pug in. Sunt quinoa polaroid blog bushwick adipisicing. Nostrud blue bottle commodo hot chicken, dolor veniam tumeric. Commodo chillwave vinyl, lyft kickstarter hella ut four dollar toast la croix dolor dreamcatcher poutine etsy. Bespoke taxidermy ramps nostrud. Id locavore polaroid, irure gluten-free viral helvetica in non commodo narwhal selvage ugh tumblr. Hoodie truffaut tousled letterpress vape craft beer taxidermy.",
-    is_teacher: true
+    is_teacher: false
   },
   { email: 'testing@testing.com',
     password: '12345678',

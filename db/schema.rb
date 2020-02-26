@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_26_144604) do
+ActiveRecord::Schema.define(version: 2020_02_26_155826) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 2020_02_26_144604) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status", default: "pending"
+    t.bigint "language_id"
+    t.index ["language_id"], name: "index_lessons_on_language_id"
   end
 
   create_table "qualifications", force: :cascade do |t|
@@ -93,6 +95,7 @@ ActiveRecord::Schema.define(version: 2020_02_26_144604) do
 
   add_foreign_key "language_skills", "languages"
   add_foreign_key "language_skills", "users"
+  add_foreign_key "lessons", "languages"
   add_foreign_key "reviews", "lessons"
   add_foreign_key "user_qualifications", "qualifications"
   add_foreign_key "user_qualifications", "users"

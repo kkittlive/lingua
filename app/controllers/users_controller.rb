@@ -18,6 +18,10 @@ class UsersController < ApplicationController
     authorize @user
   end
 
+  def edit
+    authorize(User.find(params[:id]))
+  end
+
   private
 
   def rating_calculator(teacher)

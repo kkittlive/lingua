@@ -42,7 +42,7 @@
         <h6><b>Qualifications</b>: <% @teacher.user_qualifications.each do |qualification| %>
           <%= "#{qualification.qualification.title} | " %>
           <% end %>
-        </h6>
+        teacher</h6>
       </div>
       <div class = "teacher-flags">
         <% if @teacher.languages.empty? %>

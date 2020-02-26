@@ -33,6 +33,12 @@ class UsersController < ApplicationController
     params[:user][:languages].each do |language|
       LanguageSkill.create(user_id: @user.id, language_id: language)
     end
+
+    current_user.user_qualifications.destroy_all
+    params[:user][:qualifications].each do |qualification|
+      UserQualification.create(user_id: @user.id, qualification_id: qualification)
+    end
+
     redirect_to users_dashboard_path
   end
 
@@ -50,6 +56,6 @@ class UsersController < ApplicationController
   def user_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
-    params.require(:user).permit(:first_name, :last_name, :email, :gender, :age, :phone_number, :location, :availability, :biography, :is_teacher, :languages)
+    params.require(:user).permit(:first_name, :last_name, :email, :gender, :age, :phone_number, :location, :availability, :biography, :is_teacher, :languages, :qualifications)
   end
 end

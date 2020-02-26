@@ -169,3 +169,17 @@ p {
   display: flex;
   justify-content: space-between;
 }
+
+
+
+@media(max-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}

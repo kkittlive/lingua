@@ -10,4 +10,5 @@ flatpickr(".datepicker", {
   maxDate: new Date().fp_incr(90),
   minTime: "07:00",
   maxTime: "22:00",
+  time_24hr: true
 })

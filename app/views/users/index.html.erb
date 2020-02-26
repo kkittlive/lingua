@@ -37,8 +37,8 @@
 
     <div class="search-form-control form-group">
       <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-        <%= f.input :language, as: :select, collection: ["Spanish", "English"], prompt: 'Language', label: false, class: " string required" %>
-        <%= f.input :location, place: 'Location', label: false, placeholder: "Location", class: "form-control string required location-input" %>
+        <%= f.input :language, as: :select, collection: @languages, prompt: 'Select language', label: false, class: "form-control" %>
+        <%= f.input :location, place: 'Location', label: false, placeholder: "Enter location", class: "form-control string required location-input" %>
         <%= f.submit "Search", class: "btn btn-white btn-lg btn-search-home" %>
       <% end %>
     </div>

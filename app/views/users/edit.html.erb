@@ -1,1 +1,25 @@
-<h1>@user.name</h1>
+<div class="update-body">
+  <br>
+    <div class='container'>
+      <div class="log-form">
+        <h1><b>Edit Your Information</b></h1>
+      <%= simple_form_for [@user] do |f| %>
+        <%= f.input :photo, as: :file %>
+        <%= f.input :first_name, input_html: { class: 'form-control' } %>
+        <%= f.input :last_name, input_html: { class: 'form-control' } %>
+        <%= f.input :email, input_html: { class: 'form-control' } %>
+        <%= f.input :phone_number, input_html: { class: 'form-control' } %>
+        <%= f.input :age, input_html: { class: 'form-control' } %>
+        <%= f.input :gender, input_html: { class: 'form-control' } %>
+        <%= f.input :location, input_html: { class: 'form-control' } %>
+        <%= f.input :availability, input_html: { class: 'form-control' } %>
+        <%= f.input :biography, input_html: { class: 'form-control' } %>
+        <%= f.input :languages, collection: Language.all, input_html: { multiple: true }, selected: current_user.languages.map { |l| l.id } %>
+        <%= f.input :qualifications, collection: Qualification.all, input_html: { multiple: true }, selected: current_user.qualifications.map { |q| q.id } %>
+        <%= f.input :is_teacher, input_html: { class: 'checkbox-inline' } %>
+        <%= f.button :submit, class: "btn btn-black" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

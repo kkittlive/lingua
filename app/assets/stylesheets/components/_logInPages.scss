@@ -4,9 +4,19 @@
   padding: 30px;
   background: white;
   opacity: .9;
+  margin: 20px;
 }
 
 .log-body {
   background-image: url(https://images.unsplash.com/photo-1540394250337-829b97979a32?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2249&q=80);
   height: 125vh;
+}
+
+.update-body {
+  background-image: url(https://images.unsplash.com/photo-1532455935509-eb76842cee50?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2251&q=80);
+  height: 180vh;
+}
+
+.update-body h1 {
+  text-align: center;
 }

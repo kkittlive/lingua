@@ -39,9 +39,21 @@
         <h6><%= @rating %> ⭐</h6>
         <br>
         <br>
-        <h6>Qualification #1. Qualification #2. Qualification #3. Qualification #4. Qualification #5. Qualification #6. Qualification #7.</h6>
+        <h6><b>Qualifications</b>: <% @teacher.user_qualifications.each do |qualification| %>
+          <%= "#{qualification.qualification.title} | " %>
+          <% end %>
+        teacher</h6>
       </div>
-      <img class="teacher-flag" src="<%= @teacher.languages.empty? ? asset_path('flags/ca.png') : asset_path(@teacher.languages.first.flag) %>">
+      <div class = "teacher-flags">
+        <% if @teacher.languages.empty? %>
+          <%= image_tag 'flags/ca.png', class: "teacher-flag" %>
+        <% else %>
+          <% @teacher.languages.each do |language|   %>
+          <%= image_tag language.flag, class: "teacher-flag" %>
+          <% end %>
+        <% end %>
+        <!-- <img class="teacher-flag" src="<%= @teacher.languages.empty? ? asset_path('flags/ca.png') : asset_path(@teacher.languages.first.flag) %>"> -->
+      </div>
     </div>
     <div class="teacher-bio">
       <h3>Biography</h3>

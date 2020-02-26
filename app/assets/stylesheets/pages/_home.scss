@@ -1,20 +1,31 @@
 // Specific CSS for your home-page
-.search-form-control {
+.form-inline {
   position: relative;
   width: 50%;
   margin: 0 auto;
-  display: block;
+  display: flex;
 }
 
 .form-inline .search_location {
   flex-grow: 1;
 }
 
-.form-inline .search_location input {
+.form-inline .search_location .ap-input input {
   flex-grow: 1;
 }
 
-.btn-search-home {
+input#search_location {
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 80px;
+}
+
+button.ap-input-icon.ap-icon-clear,
+button.ap-input-icon.ap-icon-pin {
+    left: 15px;
+}
+
+.btn-lg, .btn-group-lg > .btn, .btn-group-lg > .btn {
   position: absolute;
   right: 0;
   font-size: 1rem;

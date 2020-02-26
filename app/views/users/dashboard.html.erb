@@ -44,12 +44,12 @@
               <li><b>Last name:</b> <%= @user.last_name %></li>
               <li><b>E-mail:</b> <%= @user.email %></li>
               <li><b>Phone:</b> <%= @user.phone_number %></li>
-              <li><b>Gender:</b> <%= @user.gender.capitalize %></li>
+              <li><b>Gender:</b> <%= @user.gender.nil? ? "" : @user.gender.capitalize %></li>
               <li><b>Location:</b> <%= @user.location %></li>
             </ul>
           </div>
           <div class="text-center">
-            <%= link_to "Edit profile", "/", class: "btn btn-ghost" %>
+            <%= link_to "Edit profile", edit_user_path(@user.id), class: "btn btn-ghost" %>
           </div>
         </div>
 

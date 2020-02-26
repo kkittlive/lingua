@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @teachers = policy_scope(User)
+    @languages = Language.all
   end
 
   def show
@@ -16,6 +17,10 @@ class UsersController < ApplicationController
   def dashboard
     @user = current_user
     authorize @user
+  end
+
+  def edit
+    authorize(User.find(params[:id]))
   end
 
   private

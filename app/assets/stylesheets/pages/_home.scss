@@ -5,12 +5,20 @@
   margin: 0 auto;
   display: block;
 }
-.search-form-control .btn {
-  position: absolute;
-  top: 8px;
-  bottom: 8px;
-  right: 8px;
+
+.form-inline .search_location {
+  flex-grow: 1;
 }
+
+.form-inline .search_location input {
+  flex-grow: 1;
+}
+
+.btn-search-home {
+  position: absolute;
+  right: 0;
+}
+
 .search-form-control .form-control {
   height: 3.5rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);

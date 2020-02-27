@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
     @review.lesson = @lesson
     if @review.save
       flash[:notice] = 'Your review is ready!'
-      redirect_to user_path
+      redirect_to users_dashboard_path
     else
       flash[:alert] = 'There was a problem with your review.'
       render :new

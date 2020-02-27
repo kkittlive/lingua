@@ -5,6 +5,7 @@
         <th>Language</th>
         <th>Teacher</th>
         <th>Date</th>
+        <th>Location</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -14,10 +15,26 @@
           <td><%= lesson.language.name %></td>
           <td><%= lesson.teacher.first_name %> <%= lesson.teacher.last_name %></td>
           <td><%= lesson.date %></td>
-          <% if lesson.status == "completed" %>
-            <td><%= link_to "Add review", users_dashboard_path, class: "btn btn-ghost" %></td>
+          <td><%= lesson.location %></td>
+
+          <% case state %>
+          <% when "confirmed" %>
+            <td><%= link_to "Cancel", lesson_path(lesson, lesson: { status: "canceled" }), method: :patch, class: "btn btn-ghost" %></td>
+          <% when "pending" %>
+            <% if @user.is_teacher %>
+              <td><%= link_to "Confirm", lesson_path(lesson, lesson: { status: "confirmed" }), method: :patch, class: "btn btn-success" %></td>
+              <td><%= link_to "Cancel", lesson_path(lesson, lesson: { status: "canceled" }), method: :patch, class: "btn btn-ghost" %></td>
+            <% else %>
+              <td><%= link_to "Cancel", lesson_path(lesson, lesson: { status: "canceled" }), method: :patch, class: "btn btn-ghost" %></td>
+            <% end %>
+          <% when "completed" %>
+            <% if @user.is_teacher %>
+              <td><%= link_to "Delete", lesson_path(lesson), method: :delete, class: "btn btn-ghost" %></td>
+            <% else %>
+              <td><%= link_to "Add review", new_lesson_review_path(lesson), class: "btn btn-ghost" %></td>
+            <% end %>
           <% else %>
-            <td><%= link_to "Contact teacher", root_path, class: "btn btn-ghost" %></td>
+              <td><%= link_to "Delete", lesson_path(lesson), method: :delete, class: "btn btn-ghost" %></td>
           <% end %>
         </tr>
       <% end %>

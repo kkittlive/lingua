@@ -16,11 +16,20 @@ class LessonsController < ApplicationController
 
   def edit
     authorize @lesson
-
   end
 
   def update
-    authorize @lesson
+    lesson = Lesson.find(params[:id])
+    authorize lesson
+    lesson.update(status: params[:lesson][:status])
+    redirect_to users_dashboard_path
+  end
+
+  def destroy
+    lesson = Lesson.find(params[:id].to_i)
+    authorize lesson
+    lesson.destroy
+    redirect_to users_dashboard_path
   end
 
   private

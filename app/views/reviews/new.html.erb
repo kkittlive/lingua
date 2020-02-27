@@ -1,14 +1,18 @@
-<div class='container'>
-<%= simple_form_for [@lesson, @review] do |f| %>
-   <div class="form-group">
-      <%= f.label :content %>
-      <%= f.text_field :content, class: 'form-control' %>
-    </div>
+<body>
+  <div class="review-background">
+    <div class='container'>
+      <div class="log-form">
+        <h1 class="text-center">Post a New Review</h1>
+        <%= simple_form_for [@lesson, @review] do |f| %>
 
-    <div class="form-group">
-      <%= f.label :rating %>
-      <%= select(:review, :rating, %i[1 2 3 4 5]) %>
+        <%= f.input :content, input_html: { class: 'form-control' } %>
+        <%= f.input :rating, input_html: { min: '0', max: '5', class: 'form-control' } %>
+        <div class="teacher-buttons">
+          <%= link_to "Back to Dashboard", users_dashboard_path, class: "btn btn-ghost" %>
+          <%= f.submit "Add a Review", class: "btn btn-black" %>
+        </div>
+        <% end %>
+      </div>
     </div>
-  <%= f.submit "add a review", class: "btn btn-primary" %>
-<% end %>
-</div>
+  </div>
+</body>

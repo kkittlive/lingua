@@ -7,7 +7,10 @@
 
         <%= f.input :content, input_html: { class: 'form-control' } %>
         <%= f.input :rating, input_html: { min: '0', max: '5', class: 'form-control' } %>
-          <%= f.submit "add a review", class: "btn btn-primary" %>
+        <div class="teacher-buttons">
+          <%= link_to "Back to Dashboard", users_dashboard_path, class: "btn btn-ghost" %>
+          <%= f.submit "Add a Review", class: "btn btn-black" %>
+        </div>
         <% end %>
       </div>
     </div>

@@ -12,4 +12,8 @@ class LessonPolicy < ApplicationPolicy
   def update?
     record.teacher == user || record.student == user
   end
+
+  def destroy?
+    @user == record.student || @user == record.teacher
+  end
 end

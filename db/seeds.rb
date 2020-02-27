@@ -190,7 +190,6 @@ Qualification.create!(qualification_seed)
 all_users = User.where(is_teacher: true)
 all_qualifications = Qualification.all
 
-
 all_users.each do |user|
   rand(3..6).times do
     UserQualification.create(user_id: user.id, qualification_id: all_qualifications.sample.id)
@@ -203,7 +202,7 @@ language_seed = [
   { name: 'Spanish', flag: 'flags/es.png' },
   { name: 'Bengali', flag: 'flags/ne.png' },
   { name: 'Greek', flag: 'flags/gr.png' },
-  { name: 'Portuguese', flag: 'flags/pr.png' },
+  { name: 'Czech', flag: 'flags/cz.png' },
   { name: 'Japanese', flag: 'flags/jp.png' },
   { name: 'German', flag: 'flags/de.png' },
   { name: 'French', flag: 'flags/fr.png' },
@@ -219,5 +218,23 @@ all_languages = Language.all
 all_users.each do |user|
   rand(1..3).times do
     LanguageSkill.create!(user_id: user.id, language_id: all_languages.sample.id)
+  end
+end
+
+all_statuses = %w[confirmed pending completed canceled]
+all_students = User.last(2)
+sample_locations = ["Toronto, Ontario, Canada", "Chicago, Illinois, USA", "Palermo, Buenos Aires, Argentina", "Aix en Provence, Bouches du Rhone, France"]
+
+all_users.each do |user|
+  rand(1..8).times do
+    params = {
+      student: all_students.sample,
+      teacher: user,
+      language: user.languages.sample,
+      status: all_statuses.sample,
+      location: sample_locations.sample,
+      date: Date.today+rand(500)
+    }
+    Lesson.create!(params)
   end
 end

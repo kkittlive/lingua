@@ -4,7 +4,6 @@ class ReviewPolicy < ApplicationPolicy
       scope.where(is_teacher: false)
     end
   end
-
   def new?
     @user == record.lesson.student
   end

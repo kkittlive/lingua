@@ -21,7 +21,7 @@
 }
 
 .profile .icon {
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   margin-top: 30px;
 }
 
@@ -69,4 +69,34 @@ a {
 .dashboard-body {
   background-image: url(https://images.unsplash.com/photo-1505761671935-60b3a7427bad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80);
   height: 125vh;
+}
+
+.contact {
+  text-align: center;
+  color: #C8C8C8;
+}
+
+.phone {
+  text-align: center;
+  color: black;
+}
+
+.map {
+  width: 80%;
+  border-radius: 10px;
+}
+
+.flags-dash {
+  text-align: center;
+}
+
+.biography-dash {
+  text-align: center;
+  color: #C8C8C8;
+}
+
+.biography-dash b {
+  text-align: center;
+  color: black;
+  font-style: none;
 }

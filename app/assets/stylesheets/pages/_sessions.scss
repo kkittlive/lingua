@@ -1,0 +1,10 @@
+.session-link {
+  text-decoration: none;
+  opacity: 0.8;
+  margin: 10px 5px;
+  &:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: black;
+  }
+}

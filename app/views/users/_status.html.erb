@@ -33,7 +33,7 @@
             <% elsif lesson.reviews.first.nil? %>
                 <td><%= link_to "Review", new_lesson_review_path(lesson), class: "btn btn-ghost" %></td>
             <% else %>
-              <td><p>Done!</p></td>
+                <td><div class="btn no">Reviewed!</div></td>
             <% end %>
           <% else %>
               <td><%= link_to "Delete", lesson_path(lesson), method: :delete, class: "btn btn-ghost" %></td>

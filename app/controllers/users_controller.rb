@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @lesson = Lesson.new
     @user = current_user ? current_user : User.new
     @rating = rating_calculator(@teacher)
+    console
   end
 
   def dashboard

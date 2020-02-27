@@ -46,7 +46,7 @@
 </div>
 
 <div class="cards">
-  <% @teachers.each do |teacher| %>
+  <% @teachers.shuffle.each do |teacher| %>
   <div class="card-category">
     <div class="icon-container">
       <% if teacher.photo.attached? %>

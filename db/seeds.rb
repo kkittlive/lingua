@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
+require 'open-uri'
 
 UserQualification.destroy_all
 LanguageSkill.destroy_all
@@ -163,7 +164,13 @@ user_seed = [
   }
 ]
 
-User.create!(user_seed)
+i = 0
+user_seed.each do |user|
+  i += 1
+  new_user = User.new(user)
+  new_user.photo.attach(io: open("app/assets/images/avatars/#{i}.jpg"), filename: "#{i}.jpg", content_type: 'image/jpg')
+  new_user.save!
+end
 
 qualification_seed = [
   {title: 'fluent speaker'},

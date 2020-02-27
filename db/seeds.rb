@@ -6,9 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'faker'
+
 UserQualification.destroy_all
 LanguageSkill.destroy_all
 Qualification.destroy_all
+Review.destroy_all
+Lesson.destroy_all
 Language.destroy_all
 User.destroy_all
 
@@ -236,5 +240,14 @@ all_users.each do |user|
       date: Date.today+rand(500)
     }
     Lesson.create!(params)
+  end
+end
+
+completed_lessons = Lesson.where(status: "completed")
+
+completed_lessons.each do |lesson|
+  random = rand(1..3)
+  if random == 1 || random == 2
+    Review.create!(rating: rand(1..5), lesson: lesson, content: Faker::Restaurant.review )
   end
 end

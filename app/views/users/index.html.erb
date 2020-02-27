@@ -42,46 +42,59 @@
 
     <div class="search-form-control form-group">
       <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-        <%= f.input :language, as: :select, collection: @languages, prompt: 'Select language', label: false, class: "form-control" %>
-        <%= f.input :location, place: 'Location', label: false, placeholder: "Enter location", class: "form-control location-input", input_html: { class: 'auto-address' } %>
-        <%= f.submit "Search", class: "btn btn-white btn-lg btn-search-home" %>
+      <%= f.input :language, as: :select, collection: @languages, prompt: 'Select language', label: false, class: "form-control" %>
+      <%= f.input :location, place: 'Location', label: false, placeholder: "Enter location", class: "form-control location-input", input_html: { class: 'auto-address' } %>
+      <%= f.submit "Search", class: "btn btn-white btn-lg btn-search-home" %>
       <% end %>
     </div>
   </div>
 </div>
 
-<div class="cards">
-  <% @teachers.shuffle.each do |teacher| %>
-  <div class="card-category">
-    <div class="icon-container">
-      <% if teacher.photo.attached? %>
+<div class="row">
+
+  <div class="cards col-lg-8 col-md-12 col-sm-12">
+    <% @teachers.shuffle.each do |teacher| %>
+    <div class="card-category">
+      <div class="icon-container">
+        <% if teacher.photo.attached? %>
         <%= cl_image_tag teacher.photo.key, height: 500, width: 400, crop: :fill, class: "icon" %>
-      <% else %>
+        <% else %>
         <%= image_tag 'default-avatar.svg', class: "icon" %>
-      <% end %>
-    </div>
-    <div class="name">
-      <p><%= teacher.first_name %> <%= teacher.last_name %></p>
-    </div>
-    <div class="languages">
-      <% if teacher.languages.empty? %>
+        <% end %>
+      </div>
+      <div class="name">
+        <p><%= teacher.first_name %> <%= teacher.last_name %></p>
+      </div>
+      <div class="languages">
+        <% if teacher.languages.empty? %>
         <%= image_tag 'flags/ca.png', class: "flag" %>
-      <% else %>
+        <% else %>
         <% teacher.languages.each do |language|   %>
         <%= image_tag language.flag, class: "flag" %>
         <% end %>
-      <% end %>
+        <% end %>
+      </div>
+      <div class="qualifications">
+        <p><b>Availability:</b> <%= teacher.availability.capitalize %></p>
+      </div>
+      <div class="location">
+        <p><em><%= teacher.location %></em></p>
+      </div>
+      <div class="text-center">
+        <%= link_to "Book a lesson", "/users/#{teacher.id}", class: "btn btn-ghost" %>
+      </div>
     </div>
-    <div class="qualifications">
-      <p><b>Availability:</b> <%= teacher.availability.capitalize %></p>
-    </div>
-    <div class="location">
-      <p><em><%= teacher.location %></em></p>
-    </div>
-    <div class="text-center">
-      <%= link_to "Book a lesson", "/users/#{teacher.id}", class: "btn btn-ghost" %>
-    </div>
+    <% end %>
   </div>
-  <% end %>
+  <div class="col-lg-3 col-md-12 col-sm-12">
+    <div
+    id="map"
+    style="width: 100%;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
+  </div>
 </div>
 
+</div>

@@ -4,16 +4,24 @@ class UsersController < ApplicationController
   def index
     if params[:search].present? && params[:search][:language].present? && params[:search][:location].present?
       sql_query = "languages.id = :query"
-      @teachers = policy_scope(User).joins(:languages).where(sql_query, query: "#{params[:search][:language]}").near(params[:search][:location], 500)
+      @teachers = policy_scope(User).joins(:languages).where(sql_query, query: "#{params[:search][:language]}").near(params[:search][:location], 100)
     elsif params[:search].present? && params[:search][:language].present?
       sql_query = "languages.id = :query"
       @teachers = policy_scope(User).joins(:languages).where(sql_query, query: "#{params[:search][:language]}")
     elsif params[:search].present? && params[:search][:location].present?
-      @teachers = policy_scope(User).near(params[:search][:location], 500)
+      @teachers = policy_scope(User).near(params[:search][:location], 100)
     else
       @teachers = policy_scope(User)
     end
     @languages = Language.all
+
+    @markers = @teachers.map do |teacher|
+      {
+        lat: teacher.latitude,
+        lng: teacher.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { teacher: teacher })
+      }
+    end
   end
 
   def show

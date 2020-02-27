@@ -4,10 +4,8 @@ class ReviewPolicy < ApplicationPolicy
       scope.where(is_teacher: false)
     end
   end
-  def new?
-    @user == record.lesson.student
-  end
+
   def create?
-    @user == record.lesson.student
+    @user == record.lesson.student && record.lesson.reviews.count == 0
   end
 end

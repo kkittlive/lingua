@@ -10,7 +10,12 @@
       </li>
       <% if user_signed_in? %>
       <li class="nav-item dropdown d-flex align-content-center">
-        <div class="d-flex align-items-center"><%= image_tag "https://www.tuktukdesign.com/wp-content/uploads/2020/01/profile-icon-vector.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="d-flex align-items-center">
+          <%if @current_user.photo.attached? %>
+              <%= cl_image_tag @current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% else %>
+              <%= image_tag "https://www.tuktukdesign.com/wp-content/uploads/2020/01/profile-icon-vector.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "My account", users_dashboard_path, class: "dropdown-item" %>
             <%= link_to "Logout", destroy_user_session_path, class: "dropdown-item", method: :delete %>

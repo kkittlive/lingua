@@ -11,7 +11,12 @@
       </li>
       <% if user_signed_in? %>
         <li class="nav-item dropdown d-flex align-content-center">
-          <div class="d-flex align-items-center"><%= image_tag "https://www.tuktukdesign.com/wp-content/uploads/2020/01/profile-icon-vector.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="d-flex align-items-center">
+            <%if @current_user.photo.attached? %>
+              <%= cl_image_tag @current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% else %>
+              <%= image_tag "https://www.tuktukdesign.com/wp-content/uploads/2020/01/profile-icon-vector.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "My account", users_dashboard_path, class: "dropdown-item" %>
             <%= link_to "Logout", destroy_user_session_path, class: "dropdown-item", method: :delete %>
@@ -40,7 +45,16 @@
       <div class="teacher-info">
         <h1><b><%= @teacher.first_name %> <%= @teacher.last_name %></b></h1>
         <h3><%= @teacher.location %></h3>
-        <h6><%= @rating %> ⭐</h6>
+        <h6>
+          <span>
+          <% if @teacher.rating %>
+            <%= @teacher.rating %>
+            <i class="fas fa-star text-danger"></i>
+          <% else %>
+            <span>Yet to be reviewed.</span>
+          <% end %>
+          </span>
+        </h6>
         <br>
         <br>
         <h6><b>Qualifications</b>: <% @teacher.user_qualifications.each do |qualification| %>
@@ -66,10 +80,12 @@
     <div class="teacher-actions">
       <div class="reviews">
         <h3>Recent Reviews</h3>
-        <p>"Great teacher!" (Jan. 2020)</p>
-        <br>
-        <p>“Really friendly. Good to learn from, but also nice to talk with.” (Sept. 2019)</p>
-        <br>
+        <% @teacher.reviews.each do |review| %>
+          <ul>
+            <li>"<%= review.content %>" <%= render "shared/rating-stars", rating: review.rating %></li>
+            <p><em><%= review.created_at.strftime("%B %Y") %></em></p>
+          </ul>
+          <% end %>
       </div>
       <div class="lessons-form">
         <% if !current_user || !current_user.is_teacher %>

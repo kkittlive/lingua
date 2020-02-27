@@ -29,7 +29,6 @@ class UsersController < ApplicationController
     authorize @teacher
     @lesson = Lesson.new
     @user = current_user ? current_user : User.new
-    @rating = rating_calculator(@teacher)
   end
 
   def dashboard
@@ -61,15 +60,6 @@ class UsersController < ApplicationController
   end
 
   private
-
-  def rating_calculator(teacher)
-    sum = 0
-    teacher.reviews.each do |review|
-      sum += review.rating
-    end
-    return 0 if teacher.reviews.length.zero?
-    sum.to_f / teacher.reviews.length
-  end
 
   def user_params
     # *Strong params*: You need to *whitelist* what can be updated by the user

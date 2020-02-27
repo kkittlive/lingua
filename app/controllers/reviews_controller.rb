@@ -10,6 +10,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @lesson = Lesson.find(params[:lesson_id])
     @review.lesson = @lesson
+    authorize(@review)
     if @review.save
       flash[:notice] = 'Your review is ready!'
       redirect_to users_dashboard_path

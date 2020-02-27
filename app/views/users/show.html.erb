@@ -72,18 +72,20 @@
         <br>
       </div>
       <div class="lessons-form">
-        <h3>Book a Lesson</h3>
-          <%= simple_form_for [@lesson] do |f| %>
-            <%= f.input :student_id, as: :hidden, input_html: { value: @user.id } %>
-            <%= f.input :teacher_id, as: :hidden, input_html: { value: @teacher.id } %>
-            <%= f.input :date, as: :string, input_html: { class: 'datepicker'} %>
-            <%= f.input :location, input_html: { class: "auto-address" } %>
-            <%= f.input :language_id, collection: @teacher.languages %>
-            <div class="teacher-buttons">
-              <%= link_to "Back to Teacher List", "/", class: "btn btn-ghost" %>
-              <%= f.button :submit, class: "btn btn-black" %>
-            </div>
-          <% end %>
+        <% if !current_user || !current_user.is_teacher %>
+          <h3>Book a Lesson</h3>
+            <%= simple_form_for [@lesson] do |f| %>
+              <%= f.input :student_id, as: :hidden, input_html: { value: @user.id } %>
+              <%= f.input :teacher_id, as: :hidden, input_html: { value: @teacher.id } %>
+              <%= f.input :date, as: :string, input_html: { class: 'datepicker'} %>
+              <%= f.input :location, input_html: { class: "auto-address" } %>
+              <%= f.input :language_id, collection: @teacher.languages %>
+              <div class="teacher-buttons">
+                <%= link_to "Back to Teacher List", "/", class: "btn btn-ghost" %>
+                <%= f.button :submit, class: "btn btn-black" %>
+              </div>
+            <% end %>
+        <% end %>
       </div>
     </div>
   </div>

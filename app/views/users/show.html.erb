@@ -40,7 +40,16 @@
       <div class="teacher-info">
         <h1><b><%= @teacher.first_name %> <%= @teacher.last_name %></b></h1>
         <h3><%= @teacher.location %></h3>
-        <h6><%= @rating %> ⭐</h6>
+        <h6>
+          <span>
+          <% if @teacher.rating %>
+            <%= @teacher.rating %>
+            <i class="fas fa-star text-danger"></i>
+          <% else %>
+            <span>Yet to be reviewed.</span>
+          <% end %>
+          </span>
+        </h6>
         <br>
         <br>
         <h6><b>Qualifications</b>: <% @teacher.user_qualifications.each do |qualification| %>
@@ -66,10 +75,12 @@
     <div class="teacher-actions">
       <div class="reviews">
         <h3>Recent Reviews</h3>
-        <p>"Great teacher!" (Jan. 2020)</p>
-        <br>
-        <p>“Really friendly. Good to learn from, but also nice to talk with.” (Sept. 2019)</p>
-        <br>
+        <% @teacher.reviews.each do |review| %>
+          <ul>
+            <li>"<%= review.content %>" <%= render "shared/rating-stars", rating: review.rating %></li>
+            <p><em><%= review.created_at.strftime("%B %Y") %></em></p>
+          </ul>
+          <% end %>
       </div>
       <div class="lessons-form">
         <% if !current_user || !current_user.is_teacher %>

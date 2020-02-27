@@ -12,4 +12,11 @@ class User < ApplicationRecord
   has_many :languages, through: :language_skills
   has_one_attached :photo
   validates_presence_of :first_name, :last_name
+
+  def rating
+    return false if reviews.count.zero?
+
+    self.reviews.reduce(0) {|acum, review| acum + review.rating } / reviews.count.to_f
+  end
+
 end

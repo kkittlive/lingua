@@ -19,4 +19,7 @@ class User < ApplicationRecord
     self.reviews.reduce(0) {|acum, review| acum + review.rating } / reviews.count.to_f
   end
 
+  geocoded_by :location
+  after_validation :geocode
+
 end

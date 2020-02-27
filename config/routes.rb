@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   root to: 'users#index'
   resources :users, only: [:show, :edit, :update]
   resources :lessons, only: [:create, :edit, :update]
-  post '/reviews', to: 'reviews#create'
+  resources :lessons do
+    resources :reviews, only: %i[new create]
+  end
 end

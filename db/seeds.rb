@@ -234,7 +234,7 @@ all_users.each do |user|
   end
 end
 
-all_statuses = %w[confirmed pending completed canceled]
+all_statuses = %w[confirmed pending completed cancelled]
 all_students = User.last(2)
 sample_locations = ["Toronto, Ontario, Canada", "Chicago, Illinois, USA", "Palermo, Buenos Aires, Argentina", "Aix en Provence, Bouches du Rhone, France"]
 

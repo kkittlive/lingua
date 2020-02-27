@@ -19,13 +19,13 @@
 
           <% case state %>
           <% when "confirmed" %>
-            <td><%= link_to "Cancel", lesson_path(lesson, lesson: { status: "canceled" }), method: :patch, class: "btn btn-ghost" %></td>
+            <td><%= link_to "Cancel", lesson_path(lesson, lesson: { status: "cancelled" }), method: :patch, class: "btn btn-ghost" %></td>
           <% when "pending" %>
             <% if @user.is_teacher %>
               <td><%= link_to "Confirm", lesson_path(lesson, lesson: { status: "confirmed" }), method: :patch, class: "btn btn-success" %></td>
-              <td><%= link_to "Cancel", lesson_path(lesson, lesson: { status: "canceled" }), method: :patch, class: "btn btn-ghost" %></td>
+              <td><%= link_to "Cancel", lesson_path(lesson, lesson: { status: "cancelled" }), method: :patch, class: "btn btn-ghost" %></td>
             <% else %>
-              <td><%= link_to "Cancel", lesson_path(lesson, lesson: { status: "canceled" }), method: :patch, class: "btn btn-ghost" %></td>
+              <td><%= link_to "Cancel", lesson_path(lesson, lesson: { status: "cancelled" }), method: :patch, class: "btn btn-ghost" %></td>
             <% end %>
           <% when "completed" %>
             <% if @user.is_teacher %>

@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
-require 'open-uri'
 
 UserQualification.destroy_all
 LanguageSkill.destroy_all

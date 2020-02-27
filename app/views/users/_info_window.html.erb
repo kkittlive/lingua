@@ -1,7 +1,7 @@
 <div class="info-window container">
   <h6><%= link_to "#{teacher.first_name} #{teacher.last_name}", "/users/#{teacher.id}" %></h6>
-  <p><%= teacher.location %></p>
-    <div class="languages">
+  <p class="map-location"><%= teacher.location %></p>
+    <div class="map-languages">
       <% if teacher.languages.empty? %>
       <%= image_tag 'flags/ca.png', class: "flag-small" %>
       <% else %>

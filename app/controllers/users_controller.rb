@@ -2,14 +2,18 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    if params[:search][:language].present?
+    if params[:search].present? && params[:search][:language].present? && params[:search][:location].present?
+      sql_query = "languages.id = :query"
+      @teachers = policy_scope(User).joins(:languages).where(sql_query, query: "#{params[:search][:language]}").near(params[:search][:location], 500)
+    elsif params[:search].present? && params[:search][:language].present?
       sql_query = "languages.id = :query"
       @teachers = policy_scope(User).joins(:languages).where(sql_query, query: "#{params[:search][:language]}")
+    elsif params[:search].present? && params[:search][:location].present?
+      @teachers = policy_scope(User).near(params[:search][:location], 500)
     else
       @teachers = policy_scope(User)
     end
     @languages = Language.all
-    console
   end
 
   def show

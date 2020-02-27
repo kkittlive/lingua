@@ -14,7 +14,7 @@
         <tr>
           <td><%= lesson.language.name %></td>
           <td><%= lesson.teacher.first_name %> <%= lesson.teacher.last_name %></td>
-          <td><%= lesson.date %></td>
+          <td><%= lesson.date.strftime("%b %e, %l:%M hs") %></td>
           <td><%= lesson.location %></td>
 
           <% case state %>
@@ -29,7 +29,7 @@
             <% end %>
           <% when "completed" %>
             <% if @user.is_teacher %>
-              <td><%= link_to "Delete", lesson_path(lesson), method: :delete, class: "btn btn-ghost" %></td>
+              <td><%= link_to "Delete", lesson_path(lesson), method: :delete, class: "btn btn-ghost " %></td>
             <% else %>
               <td><%= link_to "Add review", new_lesson_review_path(lesson), class: "btn btn-ghost" %></td>
             <% end %>

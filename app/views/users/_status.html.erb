@@ -29,9 +29,11 @@
             <% end %>
           <% when "completed" %>
             <% if @user.is_teacher %>
-              <td><%= link_to "Delete", lesson_path(lesson), method: :delete, class: "btn btn-ghost " %></td>
+                <td><%= link_to "Delete", lesson_path(lesson), method: :delete, class: "btn btn-ghost " %></td>
+            <% elsif lesson.reviews.first.nil? %>
+                <td><%= link_to "Review", new_lesson_review_path(lesson), class: "btn btn-ghost" %></td>
             <% else %>
-              <td><%= link_to "Add review", new_lesson_review_path(lesson), class: "btn btn-ghost" %></td>
+              <td><p>Done!</p></td>
             <% end %>
           <% else %>
               <td><%= link_to "Delete", lesson_path(lesson), method: :delete, class: "btn btn-ghost" %></td>

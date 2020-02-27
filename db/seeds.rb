@@ -163,7 +163,13 @@ user_seed = [
   }
 ]
 
-User.create!(user_seed)
+i = 0
+user_seed.each do |user|
+  i += 1
+  new_user = User.new(user)
+  new_user.photo.attach(io: open("app/assets/images/avatars/#{i}.jpg"), filename: "#{i}.jpg", content_type: 'image/jpg')
+  new_user.save!
+end
 
 qualification_seed = [
   {title: 'fluent speaker'},
@@ -228,7 +234,7 @@ all_users.each do |user|
   end
 end
 
-all_statuses = %w[confirmed pending completed canceled]
+all_statuses = %w[confirmed pending completed cancelled]
 all_students = User.last(2)
 sample_locations = ["Toronto, Ontario, Canada", "Chicago, Illinois, USA", "Palermo, Buenos Aires, Argentina", "Aix en Provence, Bouches du Rhone, France"]
 

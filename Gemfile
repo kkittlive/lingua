@@ -8,6 +8,7 @@ gem 'pundit'
 gem 'puma'
 gem 'rails', '5.2.4.1'
 gem 'redis'
+gem 'geocoder'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
@@ -23,6 +24,8 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :development, :test do

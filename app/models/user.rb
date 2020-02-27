@@ -12,4 +12,6 @@ class User < ApplicationRecord
   has_many :languages, through: :language_skills
   has_one_attached :photo
   validates_presence_of :first_name, :last_name
+  geocoded_by :location
+  after_validation :geocode
 end

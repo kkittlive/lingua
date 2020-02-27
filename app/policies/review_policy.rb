@@ -7,4 +7,7 @@ class ReviewPolicy < ApplicationPolicy
   def new?
     @user == record.lesson.student
   end
+  def create?
+    @user == record.lesson.student
+  end
 end

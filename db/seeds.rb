@@ -220,8 +220,11 @@ Language.create!(language_seed)
 all_languages = Language.all
 
 all_users.each do |user|
+  seed_languages = all_languages.to_a
   rand(1..3).times do
-    LanguageSkill.create!(user_id: user.id, language_id: all_languages.sample.id)
+    seed_language = seed_languages.sample
+    LanguageSkill.create!(user_id: user.id, language_id: seed_language.id)
+    seed_languages.delete_at(seed_languages.index(seed_language))
   end
 end
 

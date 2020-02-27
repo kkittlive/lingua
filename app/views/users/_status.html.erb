@@ -11,7 +11,7 @@
     <tbody>
       <% lessons.each do |lesson| %>
         <tr>
-          <td><%= lesson.teacher.language %></td>
+          <td><%= Language.find(lesson.language_id).name %></td>
           <td><%= lesson.teacher.first_name %> <%= lesson.teacher.last_name %></td>
           <td><%= lesson.date %></td>
           <% if lesson.status == "completed" %>

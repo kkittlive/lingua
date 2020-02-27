@@ -67,7 +67,11 @@
           </ul>
           <div class="tab-content" id="pills-tabContent">
             <% Lesson::STATE.each do |state| %>
-              <%= render "status", state: state, lessons: @user.lessons.select { |lesson| lesson.status == state } %>
+              <% if @user.is_teacher %>
+                <%= render "status", state: state, lessons: @user.commitments.select { |lesson| lesson.status == state } %>
+              <% else %>
+                <%= render "status", state: state, lessons: @user.lessons.select { |lesson| lesson.status == state } %>
+              <% end %>
             <% end %>
           </div>
         </div>

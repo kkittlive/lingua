@@ -74,3 +74,12 @@ button.ap-input-icon.ap-icon-pin {
 body {
   background-color: white;
 }
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}

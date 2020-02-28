@@ -19,7 +19,8 @@ class UsersController < ApplicationController
       {
         lat: teacher.latitude,
         lng: teacher.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { teacher: teacher })
+        infoWindow: render_to_string(partial: "info_window", locals: { teacher: teacher }),
+        image_url: helpers.asset_url('pin.png')
       }
     end
   end

@@ -1,8 +1,8 @@
 <div class="update-body">
   <br>
-    <div class='container'>
-      <div class="log-form">
-        <h1><b>Edit Your Information</b></h1>
+  <div class='container'>
+    <div class="log-form">
+      <h1><b>Edit Your Information</b></h1>
       <%= simple_form_for [@user] do |f| %>
         <%= f.input :photo, as: :file %>
         <%= f.input :first_name, input_html: { class: 'form-control' } %>
@@ -19,6 +19,7 @@
         <%= f.input :is_teacher, input_html: { class: 'checkbox-inline' } %>
         <%= f.button :submit, class: "btn btn-black" %>
       <% end %>
+      <%= link_to "Back", users_dashboard_path, class: 'session-link' %>
     </div>
   </div>
 </div>

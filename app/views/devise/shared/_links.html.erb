@@ -11,7 +11,7 @@
 <% end %>
 
 <%- if devise_mapping.recoverable? %>
-  <%= link_to "Go back", root_path, class: "session-link" %><br />
+  <%= link_to "Return to homepage", root_path, class: "session-link" %><br />
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>

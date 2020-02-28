@@ -38,7 +38,7 @@
     <div class="card-category-dashboard">
       <h2 class="text-center">My Account</h2>
       <div class="profile row">
-        <div class="profile-info col-lg-3 col-md-12 col-sm-12">
+        <div class="profile-info col-lg-4 col-md-12 col-sm-12">
           <div class="icon-container">
             <% if @user.photo.attached? %>
               <%= cl_image_tag @user.photo.key, height: 500, width: 400, crop: :fill, class: "icon" %>
@@ -76,7 +76,7 @@
           </div>
         </div>
 
-        <div class="profile-classes col-lg-8 col-md-12 col-sm-12">
+        <div class="profile-classes col-lg-7 col-md-12 col-sm-12", style="overflow-x:auto;">
           <ul class="nav nav-pills nav-fill mb-3" id="pills-tab" role="tablist">
             <% Lesson::STATE.each do |state| %>
               <li class="nav-item">

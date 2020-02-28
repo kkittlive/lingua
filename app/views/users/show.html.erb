@@ -102,7 +102,7 @@
               <%= f.input :location, input_html: { class: "auto-address" } %>
               <%= f.input :language_id, collection: @teacher.languages %>
               <div class="teacher-buttons">
-                <%= link_to "Back to Teacher List", "/", class: "btn btn-ghost" %>
+                <%= link_to "Back to Teacher List", :back, class: "btn btn-ghost" %>
                 <%= f.button :submit, class: "btn btn-black" %>
               </div>
             <% end %>

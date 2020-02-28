@@ -201,8 +201,11 @@ all_users = User.where(is_teacher: true)
 all_qualifications = Qualification.all
 
 all_users.each do |user|
+  seed_qualifications = all_qualifications.to_a
   rand(3..6).times do
-    UserQualification.create(user_id: user.id, qualification_id: all_qualifications.sample.id)
+    seed_qualification = seed_qualifications.sample
+    UserQualification.create(user_id: user.id, qualification_id: seed_qualification.id)
+    seed_qualifications.delete_at(seed_qualifications.index(seed_qualification))
   end
 end
 

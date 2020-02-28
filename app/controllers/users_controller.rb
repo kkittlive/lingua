@@ -39,6 +39,7 @@ class UsersController < ApplicationController
   def edit
     authorize(User.find(params[:id]))
     @user = User.find(params[:id])
+    console
   end
 
   def update
@@ -52,8 +53,10 @@ class UsersController < ApplicationController
     end
 
     current_user.user_qualifications.destroy_all
-    params[:user][:qualifications].each do |qualification|
-      UserQualification.create(user_id: @user.id, qualification_id: qualification)
+    if !params[:user][:qualifications].nil?
+      params[:user][:qualifications].each do |qualification|
+        UserQualification.create(user_id: @user.id, qualification_id: qualification)
+      end
     end
 
     redirect_to users_dashboard_path

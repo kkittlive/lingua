@@ -167,7 +167,7 @@ i = 0
 user_seed.each do |user|
   i += 1
   new_user = User.new(user)
-  new_user.photo.attach(io: open("app/assets/images/avatars/#{i}.jpg"), filename: "#{i}.jpg", content_type: 'image/jpg')
+  new_user.photo.attach(io: open("https://media.gettyimages.com/photos/she-has-a-captivating-beauty-picture-id914254018?s=2048x2048"), filename: "#{i}.jpg", content_type: 'image/jpg')
   new_user.save!
 end
 

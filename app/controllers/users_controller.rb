@@ -39,7 +39,6 @@ class UsersController < ApplicationController
   def edit
     authorize(User.find(params[:id]))
     @user = User.find(params[:id])
-    console
   end
 
   def update

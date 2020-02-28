@@ -16,11 +16,17 @@
         <%= f.input :biography, input_html: { class: 'form-control' } %>
         <%= f.input :languages, collection: Language.all, input_html: { multiple: true }, selected: current_user.languages.map { |l| l.id } %>
         <%= f.input :qualifications, collection: Qualification.all, input_html: { multiple: true }, selected: current_user.qualifications.map { |q| q.id } if @user.is_teacher %>
-        <%= f.input :is_teacher, input_html: { class: 'checkbox-inline' } %>
+        <%= f.input :is_teacher,
+            :as => :select,
+            :collection => [['Yes',true],['No',false]],
+            :include_blank => false,
+            :label => "Register as a Teacher?" %>
         <%= f.button :submit, class: "btn btn-black" %>
       <% end %>
-      <%= link_to "Back", users_dashboard_path, class: 'session-link' %>
+      <%= link_to "Back", users_dashboard_path, class: 'btn btn-ghost' %>
     </div>
   </div>
 </div>
+
+
 

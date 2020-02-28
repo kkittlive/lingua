@@ -86,7 +86,7 @@
         <% else %>
         <% @teacher.reviews.each do |review| %>
           <ul>
-            <li>"<%= review.content %>" <%= render "shared/rating-stars", rating: review.rating %></li>
+            <li>"<%= review.content %>"</br><%= render "shared/rating-stars", rating: review.rating %></li>
             <p><em><%= review.created_at.strftime("%B %Y") %></em></p>
           </ul>
           <% end %>

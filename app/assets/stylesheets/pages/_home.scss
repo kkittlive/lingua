@@ -15,14 +15,14 @@
 }
 
 input#search_location {
-    width: 100%;
-    padding-left: 40px;
-    padding-right: 80px;
+  width: 100%;
+  padding-left: 40px;
+  padding-right: 80px;
 }
 
 button.ap-input-icon.ap-icon-clear,
 button.ap-input-icon.ap-icon-pin {
-    left: 15px;
+  left: 15px;
 }
 
 .btn-lg, .btn-group-lg > .btn, .btn-group-lg > .btn {
@@ -35,7 +35,7 @@ button.ap-input-icon.ap-icon-pin {
 }
 
 .search-form-control .form-control {
-  height: 3.5rem;
+  height: 3rem;
   border: 0.5px solid #E7E7E7;
   border-radius: none;
   color: #495057;
@@ -44,13 +44,13 @@ button.ap-input-icon.ap-icon-pin {
 .search-form-control .form-control:focus {
   border: 1px solid #1EDD88;
   outline: none !important;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  min-height: 400px;
+  height: 65vh;
 }
 .banner h1 {
   margin: 0;
@@ -60,11 +60,16 @@ button.ap-input-icon.ap-icon-pin {
   font-weight: bold;
 }
 .banner p {
-  font-size: 20px;
+  font-size: 24px;
   color: white;
   opacity: .9;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  padding-bottom: 30px;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+input:focus {
+  outline: none !important;
 }
 
 .simple_form .search {
@@ -73,13 +78,4 @@ button.ap-input-icon.ap-icon-pin {
 
 body {
   background-color: white;
-}
-
-.mapboxgl-popup {
-  max-width: 200px;
-}
-
-.mapboxgl-popup-content {
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
 }

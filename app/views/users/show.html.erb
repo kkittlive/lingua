@@ -77,17 +77,22 @@
       <h3>Biography</h3>
         <p><%= @teacher.biography %></p>
     </div>
-    <div class="teacher-actions">
-      <div class="reviews">
+    <div class="container-fluid mx-0 mt-5">
+    <div class="row teacher-actions justify-content-center">
+      <div class="reviews col-lg-8 col-md-12">
         <h3>Recent Reviews</h3>
+        <% if @teacher.reviews.empty? %>
+          <p>No reviews have been created yet...</p>
+        <% else %>
         <% @teacher.reviews.each do |review| %>
           <ul>
             <li>"<%= review.content %>" <%= render "shared/rating-stars", rating: review.rating %></li>
             <p><em><%= review.created_at.strftime("%B %Y") %></em></p>
           </ul>
           <% end %>
+        <% end %>
       </div>
-      <div class="lessons-form">
+      <div class="lessons-form col-lg-4 col-md-12">
         <% if !current_user || !current_user.is_teacher %>
           <h3>Book a Lesson</h3>
             <%= simple_form_for [@lesson] do |f| %>
@@ -103,6 +108,7 @@
             <% end %>
         <% end %>
       </div>
+    </div>
     </div>
   </div>
 </div>

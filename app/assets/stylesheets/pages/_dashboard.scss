@@ -100,3 +100,11 @@ a {
   color: black;
   font-style: none;
 }
+
+.my-custom-scrollbar {
+height: 75vh;
+overflow: scroll;
+}
+.table-wrapper-scroll-y {
+display: block;
+}
